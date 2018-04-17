@@ -1,0 +1,591 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<localizationDictionary culture="en">
+  <texts>
+    <text name="LogoTitle" value="Management Platform" />
+
+    <text name="FormIsNotValidMessage" value="Form is not valid. Please check and fix errors." />
+    <text name="TenantNameCanNotBeEmpty" value="Tenant name can not be empty" />
+
+    <text name="InvalidUserNameOrPassword" value="Invalid user name or password" />
+    <text name="ThereIsNoTenantDefinedWithName{0}" value="There is no tenant defined with name {0}" />
+    <text name="TenantIsNotActive" value="Tenant {0} is not active." />
+    <text name="UserIsNotActiveAndCanNotLogin" value="User {0} is not active and can not log in." />
+    <text name="PleaseEnterLoginInformation" value="Please enter login information" />
+    <text name="TenancyName" value="Tenancy name" />
+    <text name="UserNameOrEmail" value="User name or email" />
+    <text name="Password" value="Password" />
+    <text name="RememberMe" value="Remember me" />
+    <text name="Register" value="Register" />
+    <text name="CanBeEmptyToLoginAsHost" value="Can be empty to login as host." />
+    <text name="LogIn" value="Log in" />
+    <text name="LoginFailed" value="Login failed!" />
+    <text name="Logout" value="Logout" />
+    <text name="Changepwd" value="Change Password" />
+    <text name="InvalidUserName" value="Wrong username entered! Please try again." />
+    <text name="InvalidPassword" value="Wrong password entered! Please try again." />
+    <text name="Pleaseenterusername" value="Please enter user name." />
+    <text name="Pleaseenterpassword" value="Please enter password." />
+
+    <text name="User" value="User" />
+    <text name="CreateNewUser" value="Create New User" />
+    <text name="UserName" value="Username" />
+    <text name="IsActive" value="Active" />
+    <text name="Yes" value="Yes" />
+    <text name="No" value="No" />
+    <text name="EmailAddress" value="Email address" />
+    <text name="Surname" value="Surname" />
+    <text name="Name" value="Name" />
+    <text name="FullName" value="Full name" />
+    <text name="Save" value="Save" />
+    <text name="Cancel" value="Cancel" />
+    <text name="OK" value="OK" />
+
+
+    <!--<text name="Tenants" value="Tenants" />
+    <text name="SavedSuccessfully" value="Saved successfully" />
+    <text name="CreateNewTenant" value="Create new tenant" />
+    <text name="AdminEmailAddress" value="Admin email address" />
+ 
+    <text name="TenantName_Regex_Description" value="Tenant name must be at least 2 chars, starts with a letter and continue with letter, number, dash or underscore." />
+    <text name="DefaultPasswordIs" value="Default password is {0}" />
+    
+ 
+    <text name="OrLoginWith" value="Or login with" />
+    <text name="WaitingForActivationMessage" value="Your account is waiting to be activated by system admin." />
+    <text name="TenantSelection" value="Tenant Selection" />
+    <text name="TenantSelection_Detail" value="Please select one of the following tenants." />
+  
+
+    <text name="RegisterFormUserNameInvalidMessage">Please dont enter an email address for username.</text>
+    <text name="DatabaseConnectionString" value="Database connection string" />-->
+
+
+    <text name="SpaceManagement" value="Space Management" />
+    <text name="Country" value="Country" />
+    <text name="Region" value="Region" />
+    <text name="Province" value="Province" />
+    <text name="City" value="City" />
+    <text name="Location" value="Location" />
+    <text name="Building" value="Building" />
+    <text name="Floor" value="Floor" />
+    <text name="Room" value="Room" />
+    <text name="SpaceType" value="Space Type" />
+    <text name="SpaceInfo" value="Space Information" />
+    <text name="Company" value="Company" />
+    <text name="Department" value="Department" />
+    <text name="Zone" value="Zone" />
+    <text name="Organizational" value="Organisation" />
+    <text name="Tenant" value="Tenant" />
+    <text name="TenantContract" value="Tenant Contract" />
+    <text name="TenantContractRelationship" value="Tenant Contract Relationship" />
+    <text name="Utility" value="Utility" />
+    <text name="SpaceArrangement" value="Space Arrangement" />
+    <text name="SpaceStatistics" value="Space Statistics" />
+    <text name="SpaceManagementCenter" value="Space Summary" />
+    <text name="AssetManagement" value="Asset" />
+    <text name="AssetList" value="Asset List" />
+    <text name="AssetLocation" value="Asset Location" />
+    <text name="AssetStatistics" value="Asset Statistics" />
+    <text name="AssetProperty" value="Asset Property" />
+    <text name="QRCodeManagement" value="QR Code Management" />
+    <text name="OperationManagement" value="Operation Management" />
+    <text name="Profession" value="Profession" />
+    <text name="Engineer" value="Engineer" />
+    <text name="Spare" value="Spare" />
+    <text name="MaintenanceType" value="Maintenance Type" />
+    <text name="SLAManagement" value="SLA Management" />
+    <text name="MyMaintenanceMission" value="My Maintenance Mission" />
+    <text name="RequiredMaintenance" value="Required Maintenance" />
+    <text name="Defineprogram" value="Define Program" />
+    <text name="ScheduledMaintenance" value="Scheduled" />
+    <text name="SystemSettings" value="System Settings" />
+    <text name="CustomList" value="Custom List" />
+    <text name="CustomProperty" value="Custom Property" />
+    <text name="ListData" value="List Data" />
+    <text name="printQRcode" value="Print QR Code"></text>
+
+    <text name="CreateNewCustomTbl" value="Create List" />
+    <text name="Can_create_customtbls" value="Create List" />
+    <text name="Can_edit_customtbls" value="Edit List" />
+    <text name="Can_delete_customtbls" value="Delete List" />
+    <text name="Operation" value="Action" />
+    <text name="Edit" value="Edit" />
+    <text name="Delete" value="Delete" />
+    <text name="Required" value="This field is required"/>
+    <text name="SeeProperty" value="See Property" />
+    <text name="SettingProperty" value="Setting Property" />
+    <text name="Can_create_customflds" value="Create Property" />
+    <text name="Can_create_customflds2" value="Create Property" />
+    <text name="Can_edit_customflds" value="Edit Property" />
+    <text name="Can_edit_customflds2" value="Edit Property" />
+    <text name="Can_delete_customflds" value="Delete Property" />
+    <text name="Type" value="Type" />
+    <text name="Type1" value="Text" />
+    <text name="Type2" value="Choice" />
+    <text name="Type3" value="TextRef" />
+    <text name="Type4" value="Number" />
+    <text name="Type5" value="DateTime" />
+    <text name="Description" value="Description" />
+    <text name="IsRequired" value="Required" />
+    <text name="IsOnly" value="Unique" />
+    <text name="IsInherit" value="Inherit" />
+    <text name="AddItem" value="Add Item" />
+    <text name="EditItem" value="Edit Item" />
+    <text name="SeeValue" value="See Item Value" />
+    <text name="Processing" value="Processing..." />
+    <text name="LengthMenu" value="Show _MENU_ entries" />
+    <text name="ZeroRecords" value="No matching records found" />
+    <text name="Info" value="Showing _START_ to _END_ of _TOTAL_ entries" />
+    <text name="InfoEmpty" value="Showing 0 to 0 of 0 entries" />
+    <text name="InfoFiltered" value="(filtered from _MAX_ total entries)" />
+    <text name="Search" value="Search" />
+    <text name="EmptyTable" value="No data available" />
+    <text name="Nodata" value="No Data" />
+    <text name="LoadingRecords" value="Loading..." />
+    <text name="First" value="First" />
+    <text name="Previous" value="Previous" />
+    <text name="Next" value="Next" />
+    <text name="Last" value="Previous" />
+    <text name="SortAscending" value="activate to sort column ascending" />
+    <text name="SortDescending" value="activate to sort column descending" />
+    <text name="Color" value="Colour" />
+    <text name="Number" value="Number" />
+    <text name="Roomcode" value="Room Number" />
+    <text name="Roomname" value="Room Name" />
+    <text name="Assignmenttype" value="Allocation Type" />
+    <text name="Roomproperty" value="Room Property" />
+    <text name="Endtime" value="EndTime" />
+    <text name="Deadline" value="Deadline" />
+    <text name="Space" value="Space"></text>
+    <text name="Bsinfo" value="Building Basic Information"></text>
+    <text name="Roomassignments" value="Room Assignments"></text>
+    <text name="Contract" value="Contract"></text>
+    <text name="Rbinfo" value="Room Basic Information"></text>
+    <text name="Departmentname" value="Name"></text>
+    <text name="Assetspecificationcode" value="Asset Specification Code"></text>
+    <text name="Assetspecificationname" value="Asset Specification Name"></text>
+    <text name="Assetcode" value="Asset Code"></text>
+    <text name="Assetname" value="Asset Name"></text>
+    <text name="Home" value="Home" />
+    <text name="checksuffxpdf" value="Pdf format can only upload attachments"></text>
+    <text name="checkPicSizepdf" value="Can only upload the size of 100M files within pdf"></text>
+    <text name="Addchild" value="Add Sub-Group"></text>
+    <text name="Addthe" value="Add Group"></text>
+    <text name="Viewmaterialspec" value="View Material Spec"></text>
+    <text name="alertroom" value="Please Select Data"></text>
+    <text name="Viewlistdata" value="View List Data"></text>
+    <text name="Confirmdelete" value="Confirm Delete"></text>
+    <text name="Upload" value="Upload"></text>
+    <text name="Creator" value="Creator"></text>
+    <text name="Creatematerialspec" value="Create Material Spec"></text>
+    <text name="MaintenanceOrder" value="Maintenance Order"></text>
+    <text name="Materialbasicinformation" value="Material Basic Information"></text>
+    <text name="documents" value="Documents"></text>
+    <text name="Addbuilding" value="Add building"></text>
+    <text name="Addfloor" value="Add floor"></text>
+    <text name="Addroom" value="Add room"></text>
+    <text name="Editbuilding" value="Edit building"></text>
+    <text name="Editfloor" value="Edit floor"></text>
+    <text name="Editromm" value="Edit room"></text>
+    <text name="Contractinformation" value="Contract Information"></text>
+    <text name="nothing" value="None"></text>
+    <text name="Addmaterial" value="Add Material"></text>
+    <text name="winds" value="flow"></text>
+    <text name="temperature" value="temperature"></text>
+    <!-- operation manage start -->
+    <text name="Tbl_No" value="No."/>
+    <text name="Tbl_RequestContent" value="RequestContent"/>
+    <text name="Tbl_Priority" value="Priority"/>
+    <text name="Tbl_CreationTime" value="CreationTime"/>
+    <text name="Tbl_Status" value="Status"/>
+    <text name="Tbl_Action" value="Action"/>
+    <text name="emergent" value="Emergent"/>
+    <text name="normal" value="Normal"/>
+    <text name="Finish" value="Finish"/>
+    <text name="Created" value="InProcess"/>
+    <text name="Canceled" value="Canceled"/>
+    <text name="Rejected" value="Rejected"/>
+    <text name="NewRequest" value="New Request"/>
+    <text name="SureToCancel" value="Are you sure to cancel this request?"/>
+    <text name="Read" value="View Details"/>
+    <text name="Fld_Content" value="Content"/>
+    <text name="Fld_Eqp" value="Equipment"/>
+    <text name="Fld_Problem" value="Problem"/>
+    <text name="Fld_Description" value="Description"/>
+    <text name="Fld_Priority" value="Priority"/>
+    <text name="Fld_Applicant" value="Applicant"/>
+    <text name="Fld_Tel" value="Applicant Phone"/>
+    <text name="Approve" value="Approve"/>
+    <text name="todo" value="Todo"/>
+    <text name="done" value="Done"/>
+    <text name="Tbl_Task" value="Task"/>
+    <text name="CreateWorkOrder" value="Prepare Spare Parts"/>
+    <text name="CreateWorkRequest" value="Assign Worker"/>
+    <text name="WorkWithWorkOrder" value="Process Task"/>
+    <text name="Worker" value="Worker"/>
+    <text name="WorkerName" value="Worker Name"/>
+    <text name="SpareParts" value="Spare Parts"/>
+    <text name="WfHistory" value="Workflow History"/>
+    <text name="Accept" value="Accept"/>
+    <text name="Reject" value="Reject"/>
+    <text name="Transmit" value="Transmit"/>
+    <text name="SelectedSpareParts" value="Spare Parts Selected"/>
+    <text name="Start" value="Start"/>
+    <text name="End" value="End"/>
+    <text name="Amount" value="Amount"/>
+    <text name="accept" value="Accept"/>
+    <text name="reject" value="Reject"/>
+    <text name="ask" value="Ask Opion"/>
+    <text name="proxy" value="Proxy"/>
+    <text name="AssignPerson" value="Assignment"/>
+    <text name="ActionTime" value="Action Time"/>
+    <text name="ApproveContent" value="Comments"/>
+    <text name="WfChart" value="Workflow Chart"/>
+    <text name="s_complete" value="Finish"/>
+    <text name="s_wait" value="InProcess"/>
+    <text name="s_no" value="Not Reach"/>
+    <text name="WorkerType" value="Worker Type"/>
+    <text name="TransmitType" value="Transmit Type"/>
+    <text name="UserList" value="User List"/>
+    <text name="AddProgram" value="Add Program"></text>
+    <text name="AddSteps" value="Add Steps"></text>
+    <text name="AddJobs" value="Add Jobs"></text>
+    <text name="AddSpare" value="Add Spare"></text>
+    <text name="AddToolType" value="Add Tool Type"></text>
+    <text name="EditProgram" value="Edit Program"></text>
+    <text name="EditSteps" value="Edit Steps"></text>
+    <text name="EditJobs" value="Edit Jobs"></text>
+    <text name="EditSpare" value="Edit Spare"></text>
+    <text name="EditToolType" value="Edit Tool Type"></text>
+    <!-- operation manage end -->
+
+    <text name="SystemConfiguration" value="System Configuration"></text>
+    <text name="ServiceDispatchTxt" value="Work Order"></text>
+    <text name="SecurityMgr" value="Security"></text>
+    <text name="CCTV" value="CCTV"></text>
+    <text name="EnergyMgr" value="Energy"></text>
+    <text name="PowerMgr" value="Power Management"></text>
+    <text name="DoorAccess" value="Access Control"></text>
+    <text name="Materialdatainformation" value="Equipment Operation Information"></text>
+    <text name="DateTime" value="Date"></text>
+    <text name="DeviceName" value="Device Name"></text>
+    <text name="MessageDesc" value="Activity"></text>
+    <text name="IsAlarm" value="Alarm Status"></text>
+    <text name="CardId" value="Access Card ID"></text>
+    <text name="CardName" value="Access Card Holder"></text>
+    <text name="DBPowerInformation" value="DB Power Information"></text>
+
+    <text name="UserMgr" value="User Management"></text>
+    <text name="RoleMgr" value="Role Management"></text>
+    <text name="Manager" value="Manager"></text>
+    <text name="UserFullName" value="User FullName"></text>
+    <text name="UserEmail" value="User Email"></text>
+    <text name="Action" value="Action"></text>
+    <text name="EditUser" value="Edit User"></text>
+    <text name="EditRole" value="Edit Role"></text>
+    <text name="NewRole" value="New Role"></text>
+    <text name="RoleName" value="Role Name"></text>
+    <text name="DisplayName" value="Display Name"></text>
+    <text name="ConfirmPassword" value="Confirm Password"></text>
+    <text name="Add" value="Add"></text>
+
+    <text name="Version" value="Version"></text>
+    <text name="ContingencyPlan" value="Contingency Plan"></text>
+    <text name="EmergencyMgr" value="Emergency Management"></text>
+
+    
+    <text name="TypeofSpace" value="Type of Space"></text>
+    <text name="NumberofRoomsperBuilding" value="Number of Rooms per Building"></text>
+    <text name="FacilityAlert" value="Facility Alert"></text>
+    <text name="PercentageofSpaceOccupied" value="Percentage of Space Occupied"></text>
+    <text name="ScheduledMaintenanceWorkOrders" value="Scheduled Maintenance Work Orders"></text>
+    <text name="EnergyAnalysis" value="Energy Analysis"></text>
+    <text name="Floor Code" value="Floor Code"></text>
+    <text name="Building Code" value="Building Code"></text>
+    <text name="Space Model" value="Space Model"></text>
+    <text name="Asset Model" value="Asset Model"></text>
+    <text name="Floor Name" value="Floor Name"></text>
+    <text name="Building Gross Area" value="Building Gross Area "></text>
+    <text name="Comment" value="Comment"></text>
+    <text name="Tenant Type" value="Tenant"></text>
+    <text name="Dispay Color" value="Display Colour"></text>
+    <text name="Contract Name" value="Contract Name"></text>
+    
+    <text name="Start Date" value="Start Date"></text>
+    <text name="End Date" value="End Date"></text>
+    <text name="Rental" value="Rental"></text>
+    <text name="Method of Payment" value="Method of Payment"></text>
+    <text name="Property Management Fee" value="Property Management Fee"></text>
+
+
+    <text name="Postal Code" value="Postal Code"></text>
+    <text name="Address" value="Address"></text>
+    <text name="Total Floor Area" value="Total Floor Area"></text>
+    
+    <text name="编号" value="Asset Code"></text>
+    <text name="所属房间" value="Room"></text>
+    <text name="所属规格" value="Specification"></text>
+    <text name="AddComplaint" value="Add Complaint"></text>
+    <text name="Inbox" value="Inbox"></text>
+    <text name="WorkOrderList" value="List"></text>
+    <text name="ReportedBy" value="Reported By"></text>
+    
+    <text name="WorkOrderPriority" value="Priority"></text>
+    <text name="WorkOrderStatus" value="Status"></text>
+    <text name="All" value="All"></text>
+    <text name="Priority1" value="Priority 1"></text>
+    <text name="Priority2" value="Priority 2"></text>
+    <text name="Priority3" value="Priority 3"></text>
+    <text name="PendingReview" value="Pending Review"></text>
+    <text name="Completed" value="Completed"></text>
+    <text name="Accumulated Energy （Wh_Im）" value="Accumulated Energy（Wh_Im）"></text>
+    <text name="Total Active Power （Ptot）" value="Total Active Power（Ptot）"></text>
+    <text name="City/Zone" value="City/Zone"></text>
+    <text name="WorkType" value="Work Type"></text>
+    <text name="SparePartType" value="Spare Part Type"></text>
+    <text name="Title" value="Title"></text>
+    <text name="CCTVName" value="CCTVName"></text>
+    <text name="CCTVEQPCode" value="CCTVEQPCode"></text>
+    <text name="CCTVIP" value="CCTVIP"></text>
+    <text name="CCTVUserName" value="CCTVUserName"></text>
+    <text name="CCTVPassword" value="CCTVPassword"></text>
+    <text name="CCTVFloor" value="CCTVFloor"></text>
+    <text name="Label" value="Label"></text>
+    <text name="Area Description" value="Area Description"></text>
+    <text name="EqpCode" value="EqpCode"></text>
+    <text name="DistributionBoardName" value="Distribution Board Name"></text>
+    <text name="Staff" value="Staff"></text>
+
+    <text name="ComplaintDetails" value="Complaint Details"></text>
+    <text name="ContactInformation" value="Location"></text>
+    <text name="ReportingDate" value="Reporting Date"></text>
+    <text name="Image" value="Image"></text>
+    <text name="Create" value="Create"></text>
+    <text name="Resolved" value="Resolved"></text>
+    <text name="Username" value="Username"></text>
+    
+    <text name="DetailsofWorkOrder" value="Details of Work Order"></text>
+    <text name="SerialNo." value="Serial No."></text>
+    <text name="Datecreated" value="Date created"></text>
+    <text name="PriorityLevel" value="Priority Level"></text>
+    <text name="Technician" value="Technician"></text>
+    <text name="Supervisor" value="Supervisor"></text>
+    <text name="Before" value="Before"></text>
+    <text name="After" value="After"></text>
+    <text name="Remarks" value="Remarks"></text>
+    <text name="WorkProgress" value="Work Progress"></text>
+    <text name="用户投诉" value="User Complaint"></text>
+    <text name="调度已经将投诉分发至相应的管理人员以及维修人员；" value="Work Order dispatched to respective supervisor and technician"></text>
+    <text name="调度已经将投诉分发至相应的维修人员；" value="Work Order dispatched to respective technician"></text>
+    <text name="管理人员已经查看投诉信息，正与维修人员沟通。" value="Work order reviewed and communicated with technician"></text>
+    <text name="维修人员已经完成维修，待管理人员确认。" value="Technician completed Work Order, pending for review"></text>
+    <text name="维修人员已经查看投诉，并拍照取证，前往维修。" value="The Technician has checked the complaint and taken a photo to obtain evidence for the repairs."></text>
+    <text name="管理员已经确认维修完成。" value="Maintenance reviewed by supervisor."></text>
+    <text name="调度人员已经确认维修完成。" value="Work Order reviewed by dispatcher."></text>
+    <text name="维修人员已经完成维修，待调度人员确认。" value="Technician completed Work Order, pending for review."></text>
+    
+    <text name="Pending" value="Pending" />
+    <text name="LocationName" value="Location" />
+    
+    <text name="AddComplaintqstion" value="Add Complaint" />
+    <text name="From" value="From" />
+    <text name="Addressfamliy" value="Address" />
+    <text name="DescriptionandLocationofComplaint" value="Description and Location of Complaint" />
+    <text name="LoadImage" value="Image" />
+    <text name="PleaseinputthereasonfornotcreatingWorkOrder." value=" Please Input Reason." />
+    <text name="Pleasechooseatechnician" value="Please choose a technician" />
+    <text name="Areyousureyouwanttoclosethisworkorder?" value="Are you sure you want to close this work order?" />
+    <text name="Problemdescription" value="Problem description" />
+    <text name="Selectpersonnel" value="Select personnel" />
+    <text name="Pleaseselectlevel" value="Please select level" />
+    <text name="Pleaseselecttype" value="Please select type" />
+    <text name="Sendout" value="Send out" />
+    <text name="Noworkorderreason" value="Reason" />
+    <text name="Feedbackuserinformation" value="Feedback" />
+    <text name="Problemprocessingallocation" value="Resolve" />
+    <text name="Problemofcommunication" value="Chat" />
+    <text name="Closetheworkorder" value="Close" />
+    <text name="Complaintsoftime" value="Complaint Time" />
+    <text name="Completiontime" value="Completion time" />
+    <text name="Equipmentnumber" value="Equipment number" />
+    <text name="Pleaseenter" value="Please enter" />
+    <text name="检修中" value="Undergoing Maintenance" />
+    <text name="已完成" value="Completed" />
+    <text name="待审核" value="Pending Review" />
+    <text name="Send" value="Send" />
+    <text name="Pleaseentertheusername" value="Please enter the login username" />
+    <text name="Pleaseenteruserloginpassword" value="Please enter user login password" />
+    <text name="PleaseentertheusernameOne" value="Please enter the username" />
+    <text name="Pleaseselectuserroles" value="Please select user roles" />
+    <text name="Savesuccess" value="Successfully saved" />
+    <text name="Savefailed" value="Failed saved" />
+    <text name="Pleaseselecttheproblemtobedealtwith" value="Please select the problem to be dealt with." />
+    <text name="Failedtosave.Pleasetryagain." value="Unable to save. Please try again." />
+    <text name="Closethesuccess" value="Close success." />
+    <text name="Pleaseselectthequestionfirst" value="Please select the question first" />
+    <text name="Pleaseinputuserfeedback" value="Please Input Feedback." />
+    <text name="Sendasuccess" value="Successfully sent" />
+    <text name="Pleaseselectthelevelofworkfirst" value="Please select the level of work first." />
+    <text name="Pleaseselecttheproblemtypefirst" value="Please select the problem type first." />
+  
+    <text name="Optionforeachbranch" value="Option for each branch" />
+    <text name="InputChoice1" value="Input Choice 1" />
+    <text name="InputChoice2" value="Input Choice 2" />
+    <text name="InputChoice3" value="Input Choice 3" />
+    <text name="Source" value="Source" />
+    <text name="WebRoles" value="Web Roles" />
+    <text name="Consistsof" value="Consists of" />
+    <text name="MobileRoles" value="Mobile Roles" />
+
+    <text name="Addnewspacetype" value="Add New Space Type" />
+    <text name="Pleaseinsertname" value="Please insert name" />
+    <text name="Pleaseinsertcolour" value="Please insert colour" />
+    <text name="Confirm" value="Confirm" />
+    <text name="Close" value="Close" />
+    <text name="Editspacetype" value="Edit Space Type" />
+    <text name="AddGroup" value="Add Group" />
+    <text name="EditGroup" value="Edit Group" />
+    <text name="Browse" value="Browse" />
+    
+    <text name="ComplaintStatus" value="Status" />
+    <text name="ComplaintProcess" value="Processing" />
+
+    <text name="Pages" value="Pages" />
+    <text name="Asset" value="Asset" />
+    <text name="Security" value="Security" />
+    <text name="Energy" value="Energy" />
+    <text name="SystemConfig" value="System Config" />
+    <text name="Operation1" value="Operation" />
+    <text name="RefreshButton" value="Refresh" />
+
+    <text name="Hotline" value="Hotline" />
+    <text name="Directly" value="Resolve" />
+    <text name="Pleaseenterthenameoftheowner" value="Please Enter Details!" />
+    <text name="Pleaseenteraddress" value="Please Enter Address！" />
+    <text name="Pleasedescribethespecificproblem" value="Please describe the specific problem！" />
+
+    <text name="CCTVConfig" value="CCTV" />
+    <text name="DoorAccessConfig" value="Access Control" />
+    <text name="PowerMgrConfig" value="Power Management" />
+
+    <text name="Totalnumberofpeople" value="Total number of people" />
+    <text name="Numberofstaff" value="Number of staff" />
+    <text name="Numberoftempstaff" value="Number of temp staff" />
+    <text name="IndoorTemperature" value="Indoor Temperature" />
+    <text name="IndoorPressure" value="Indoor Pressure" />
+    <text name="Activate" value="Activate" />
+    <text name="Record" value="Record" />
+    <text name="Recording" value="Recording" />
+    <text name="Duration" value="Duration" />
+    <text name="Stop" value="Stop" />
+    <text name="CancelEm" value="Cancel" />
+    <text name="RecList" value="List" />
+    <text name="FireEquipment" value="Fire Equipment" />
+    <text name="FireCamera" value="Camera" />
+
+
+    <text name="RelDocuments" value="Documents" />
+    <text name="ClientIpAddress" value="Client IP Address" />
+    <text name="ClientName" value="Client Name" />
+    <text name="BrowserInfo" value="Browser Info" />
+    <text name="LoginResult" value="Login Result" />
+  
+    <text name="LoginAudit" value="Login Audit" />
+    <text name="UserAudit" value="User Audit" />
+    <text name="SpaceBaseInfo" value="Basic Information" />
+
+    <text name="Pleaseselectbuilding" value="Please select building" />
+    <text name="Pleaseselectthebuildingfirst" value="Please select the building first." />
+    
+    <text name="Specification" value="Specification" />
+    <text name="Levels" value="Levels" />
+    
+    <text name="Water" value="Water" />
+    <text name="Power" value="Power" />
+    <text name="m³" value="m³" />
+    <text name="kW·h" value="kW·h" />
+    <text name="Notice" value="Notice" />
+    <text name="Work Order List" value="Work Order List" />
+    <text name="Add Notice" value="Add Notice" />
+    <text name="Pleaseentertitle" value="Please enter title" />
+    <text name="Pleaseentercontent" value="Please enter content" />
+    <text name="Getnoticefail" value="Get notice fail." />
+    <text name="Problem" value="Problem" />
+    <text name="Reported By" value="Reported By" />
+    <text name="Deletesuccess" value="Delete success." />
+    <text name="Deletefail" value="Delete fail." />
+    <text name="Index" value="Index" />
+    
+    
+    <text name="PassRuleMessage" value="Password should be between 8 to 30 characters, containing letters and numbers." />
+    
+    <text name="Display Colour" value="Display Colour" />
+    <text name="Contract Number" value="Contract Number" />
+    <text name="CCTV Name" value="CCTV Name" />
+    <text name="EQP Code" value="EQP Code" />
+    <text name="IP Address" value="IP Address" />
+    <text name="Technical Address" value="Technical Address" />
+    <text name="Permissions" value="Permissions" />
+    <text name="Updates" value="Updates" />
+    <text name="Date" value="Date" />
+    <text name="Hotline Number" value="Hotline Number" />
+    <text name="Release Date" value="Release Date" />
+    
+    <text name="Brand" value="Brand" />
+    <text name="Equipment Model" value="Equipment Model" />
+    <text name="Engineering Parameters" value="Engineering Parameters" />
+    <text name="Factory/Country of Origin" value="Factory/Country of Origin" />
+    <text name="Supplier" value="Supplier" />
+    <text name="Installation Date" value="Installation Date" />
+    <text name="Installer" value="Installer" />
+    <text name="Operating and Maintenance Manual" value="Operating and Maintenance Manual" />
+    <text name="Panel Number" value="Panel Number" />
+
+    <text name="NickName" value="NickName" />
+    <text name="Pleaseenterthesamepassword" value="Please enter the same password." />
+
+    <text name="ContingencyPlanHistory" value="Contingency History" />
+    <text name="ContingencyPlanResponse" value="Contingency Response" />
+    <text name="ContiSerialNo" value="Serial No." />
+    <text name="ContiDescription" value="Description" />
+    <text name="ContiStart" value="Start" />
+    <text name="ContiEnd" value="End" />
+    <text name="ContiStaff" value="Staff" />
+    <text name="ContiReason" value="Reason" />
+    <text name="ContiDetail" value="Detail" />
+  
+    <text name="ContiAccessCardID" value="Access Card ID" />
+    <text name="ContiAccessCardHolder" value="Access Card Holder" />
+    <text name="ContiDeviceName" value="Device Name" />
+    <text name="ContiDate" value="Date" />
+    <text name="ContPersonnelStatus" value="Personnel Status" />
+    <text name="ContEnvironmentalStatus" value="Environmental Status" />
+    <text name="ContFaultStatus" value="Fault Status" />
+
+    <text name="SpaceStructure" value="Space Structure" />
+    
+    <text name="PreMgr" value="Pre Process" />
+    <text name="BuildingMgr" value="Building" />
+    <text name="FloorMgr" value="Floor" />
+    <text name="SpaceMgr" value="Space" />
+    <text name="ComponentMgr" value="Component" />
+    <text name="ClassifyMgr" value="Classify" />
+    <text name="AttributeConfig" value="Attribution" />
+    <text name="EquipmentMapping" value="Equipment Mapping" />
+    <text name="AssetMgr" value="Asset" />
+    <text name="EquipmentAsset" value="Equipment Asset" />
+    <text name="SpaceAsset" value="Space Asset" />
+    <text name="SpecificationLib" value="Specification" />
+    <text name="SpecificationClassify" value="SPEC Classify" />
+    <text name="SpecificationAttribution" value="SPEC Attribution" />
+    <text name="OperationMgr" value="Operation" />
+    <text name="DispatchMgr" value="Dispatch" />
+    <text name="ComplaintCenter" value="Complaint Center" />
+    <text name="RequestMaintenance" value="Request" />
+    <text name="OperationConfig" value="Operation Config" />
+    
+    <text name="PropertyMgr" value="PropertyMgr" />
+    <text name="RentMgr" value="RentMgr" />
+    <text name="FinancialStatistics" value="FinancialStatistics" />
+  </texts>
+</localizationDictionary>

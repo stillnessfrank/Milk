@@ -1,0 +1,15 @@
+﻿html, body {height:100%}.logofa{font-size:30px}label.error {color:#ae2626}.baseinfoheading {background-color: #35404d !important;}.baseinfoheading>.panel-title, .baseinfoheading>.panel-title>a, .baseinfoheading>.panel-title>.accordion-toggle {color: white!important;}
+@-webkit-keyframes twinklingbell{	/*透明度由0到1*/
+0%{opacity:0;}
+100%{opacity:1;}
+}
+.twinklingbell{-webkit-animation: twinklingbell 1s infinite ease-in-out; }
+.state-overview .value {height:100px;padding-top:0px}
+.state-overview .value > h3 {margin:0;height:100px;display:table-cell;vertical-align:middle;font-size:20px;text-align:center;padding: 0 30px;}
+ @media screen and (max-width: 1440px ) {
+    .state-overview .value>h3 {
+        font-size: 16px;
+        padding: 0 15px;
+        line-height: 20px;    
+    }
+}

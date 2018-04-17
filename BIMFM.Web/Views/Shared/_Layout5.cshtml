@@ -1,0 +1,109 @@
+﻿@using System.Threading
+@using System.Web.Optimization
+@using Abp.Timing
+@using Abp.Web.Mvc.Extensions
+@{
+    SetAntiForgeryCookie();
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    @*<link rel="icon" type="image/png" sizes="16x16" href="~/theme/assets/images/favicon.png">*@
+
+    <title>@ViewBag.Title</title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link href="~/theme/assets/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+    <link href="~/theme/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/toastr.min.css" rel="stylesheet" />
+    <link href="~/Scripts/sweetalert/sweet-alert.css" rel="stylesheet" />
+    <link href="~/theme/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/theme/assets/css/animate.min.css" rel="stylesheet" />
+    <link href="~/theme/assets/css/style.min.css" rel="stylesheet" />
+    <link href="~/theme/assets/css/style-responsive.min.css" rel="stylesheet" />
+    <link href="~/theme/assets/css/theme/default.css" rel="stylesheet" id="theme" />
+
+    <!-- View specific styles -->
+    @RenderSection("styles", required: false)
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=mGAIH1jhIoASGa67nHP3oMCXK3lGF8PB"></script>
+    <script type="text/javascript">
+        //This is used to get the application's root path from javascript. It's useful if you're running application in a virtual directory under IIS.
+        var abp = abp || {}; abp.appPath = '@ApplicationPath';
+    </script>
+
+</head>
+<body class="pace-top">
+    <!-- begin #page-loader -->
+    <div id="page-loader" class="fade in"><span class="spinner"></span></div>
+    <!-- end #page-loader -->
+    
+    <!-- begin #page-container -->
+    <div id="page-container" class="page-container fade page-sidebar-fixed page-header-fixed">
+        @Html.Partial("_TopBar")
+        @Html.Action("LeftMenu", "Layout")
+        @RenderBody()
+    </div>
+
+    
+    @*<script src="~/theme/assets/plugins/jquery/jquery-1.9.1.min.js"></script>*@
+    <script src="~/Scripts/json2.js"></script>
+    <script src="~/Scripts/jquery-1.12.1.min.js"></script>
+    <script src="~/theme/assets/plugins/jquery/jquery-migrate-1.1.0.min.js"></script>
+    <script src="~/theme/assets/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+    <script src="~/theme/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>
+        <script src="~/theme/assets/crossbrowserjs/html5shiv.js"></script>
+        <script src="~/theme/assets/crossbrowserjs/respond.min.js"></script>
+        <script src="~/theme/assets/crossbrowserjs/excanvas.min.js"></script>
+    <![endif]-->
+    <script src="~/theme/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="~/theme/assets/plugins/jquery-cookie/jquery.cookie.js"></script>
+    <!-- ================== END BASE JS ================== -->
+	
+    <script src="~/Scripts/moment-with-locales.min.js"></script> 
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.blockUI.js"></script> 
+    <script src="~/Scripts/toastr.min.js"></script> 
+    <script src="~/Scripts/sweetalert/sweet-alert.min.js"></script> 
+    <script src="~/Scripts/others/spinjs/spin.js"></script> 
+    <script src="~/Scripts/others/spinjs/jquery.spin.js"></script> 
+    <script src="~/Scripts/jquery.signalR-2.2.1.min.js"></script> 
+
+    <script src="~/Abp/Framework/scripts/abp.js"></script>  
+    <script src="~/Abp/Framework/scripts/libs/abp.jquery.js"></script>  
+    <script src="~/Abp/Framework/scripts/libs/abp.toastr.js"></script>  
+    <script src="~/Abp/Framework/scripts/libs/abp.blockUI.js"></script>  
+    <script src="~/Abp/Framework/scripts/libs/abp.spin.js"></script>  
+    <script src="~/Abp/Framework/scripts/libs/abp.sweet-alert.js"></script> 
+    
+
+    <!-- ================== BEGIN PAGE LEVEL JS ================== -->
+
+    <!-- Dynamic scripts of ABP system (They are created on runtime and can not be bundled) -->
+    <script src="~/api/AbpServiceProxies/GetAll?v=@(Clock.Now.Ticks)"></script>
+    <script src="~/AbpScripts/GetScripts?v=@(Clock.Now.Ticks)" type="text/javascript"></script>
+
+    <!-- SignalR scripts -->
+    <script src="~/signalr/hubs"></script>
+    <script src="~/Abp/Framework/scripts/libs/abp.signalr.js"></script>
+
+    <!-- View specific scripts -->
+    @RenderSection("scripts", required: false)
+    <script>
+        //Localizing momentjs
+        moment.locale('@Thread.CurrentThread.CurrentUICulture.Name');
+    </script>
+    <script type="text/javascript">
+    $(function() {
+        swal.setDefaults({ confirmButtonText: "@L("OK")" });
+    });
+    </script>
+
+</body>
+</html>
+

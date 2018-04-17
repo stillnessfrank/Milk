@@ -1,0 +1,1161 @@
+﻿@using Abp.Authorization.Users
+@using Abp.Web.Mvc.Extensions
+@{
+    ViewBag.Title = L("Home");
+    Layout = "~/Views/Shared/_Layout5.cshtml";
+}
+<div id="content" class="content" style="padding: 0;position: relative;margin-left: 0;">
+    <div id="page-header" style="height: 45px;line-height: 45px;background: #ffffff;margin-left: 60px;overflow: auto;">
+        <form style="margin-left: 20px;">
+            <span>地理区域：</span>
+            <select id="u82_input">
+                <option value="上海">上海</option>
+                <option value="宝山区">&nbsp;&nbsp;&nbsp; 宝山区</option>
+                <option value="崇明区">&nbsp;&nbsp;&nbsp; 崇明区</option>
+                <option value="奉贤区">&nbsp;&nbsp;&nbsp; 奉贤区</option>
+                <option value="虹口区">&nbsp;&nbsp;&nbsp; 虹口区</option>
+                <option value="黄浦区">&nbsp;&nbsp;&nbsp; 黄浦区</option>
+                <option value="嘉定区">&nbsp;&nbsp;&nbsp; 嘉定区</option>
+                <option value="金山区">&nbsp;&nbsp;&nbsp; 金山区</option>
+                <option value="静安区">&nbsp;&nbsp;&nbsp; 静安区</option>
+                <option value="静安区（闸北）">&nbsp;&nbsp;&nbsp; 静安区（闸北）</option>
+                <option value="闵行区">&nbsp;&nbsp;&nbsp; 闵行区</option>
+                <option value="">&nbsp;&nbsp;&nbsp; </option>
+            </select>
+        </form>
+        <form>
+            <span>管理单位：</span>
+            <select id="u83_input">
+                <option value="不限">不限</option>
+                <option value="上海牛奶（集团）有限公司资产经营部">上海牛奶（集团）有限公司资产经营部</option>
+                <option value="上海XXXXXXXXXXXXXXX">上海XXXXXXXXXXXXXXX</option>
+            </select>
+        </form>
+        <form>
+            <span>产权情况：</span>
+            <select id="u84_input">
+                <option value="不限">不限</option>
+                <option value="有产权证">有产权证</option>
+                <option value="无产权证">无产权证</option>
+                <option value="有使用权">有使用权</option>
+            </select>
+        </form>
+        <form>
+            <span>租金情况：</span>
+            <select id="u85_input">
+                <option value="不限">不限</option>
+                <option value="有产权证">有产权证</option>
+                <option value="无产权证">无产权证</option>
+                <option value="有使用权">有使用权</option>
+            </select>
+        </form>
+        <form>
+            <span>租凭用途：</span>
+            <select id="u87_input">
+                <option value="不限">不限</option>
+                <option value="有产权证">有产权证</option>
+                <option value="无产权证">无产权证</option>
+                <option value="有使用权">有使用权</option>
+            </select>
+        </form>
+        <form>
+            <span>房屋用途：</span>
+            <select id="u88_input">
+                <option value="不限">不限</option>
+                <option value="有产权证">有产权证</option>
+                <option value="无产权证">无产权证</option>
+                <option value="有使用权">有使用权</option>
+            </select>
+        </form>
+        <form>
+            <span>土地用途：</span>
+            <select id="u89_input">
+                <option value="不限">不限</option>
+                <option value="有产权证">有产权证</option>
+                <option value="无产权证">无产权证</option>
+                <option value="有使用权">有使用权</option>
+            </select>
+        </form>
+    </div>
+    <!-- end page-header -->
+    <div id="allmap" style="height: 100%;min-height: 100%;max-height: 100%;display: block;"></div>
+    <div id="cesiumContainer" style="display:none;height: 600px;min-height: 100%;max-height: 100%;"></div>
+    <iframe id="cesiumContainer2" src="page_blank2.html" style="display:none;height: 600px;border: none;"></iframe>
+    <div id='loadingbar' class="spinner">
+        <div class="spinner-container container1">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+        </div>
+        <div class="spinner-container container2">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+        </div>
+        <div class="spinner-container container3">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+        </div>
+    </div>
+    <!-- 当月任务等 悬浮框 -->
+    <div id="tankuang">
+        <div class="col-md-12">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-inverse overflow-hidden">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" style="position: relative;">
+                            <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                <i class="fa fa-plus-circle pull-right"></i>
+                                任务提示
+                            </a>
+                            <a class="renwu" style="position: absolute;right: 30px;top: 10px;" onclick="renwu()">查看</a>
+                        </h3>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <p>待收数：58</p>
+                            <p>待收金额：562235.00元</p>
+                            <p>合同将到期：52</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-inverse overflow-hidden">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" style="position: relative;">
+                            <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                <i class="fa fa-plus-circle pull-right"></i>
+                                资产信息
+                            </a>
+                            <a class="zichan" style="position: absolute;right: 30px;top: 10px;" onclick="zichan()">查看</a>
+                        </h3>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body asset" >
+                            <p>资产总数：183</p>
+                            <p>有产证：173</p>
+                            <p>无产证：8</p>
+                            <p>有使用权：2</p>
+                            <p>房间总数：1887</p>
+                            <p>资产总面积：1800000 m2</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-inverse overflow-hidden">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" style="position: relative;">
+                            <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                <i class="fa fa-plus-circle pull-right"></i>
+                                租凭信息
+                            </a>
+                            <a class="zuping" style="position: absolute;right: 30px;top: 10px;" onclick="zuping()">查看</a>
+                        </h3>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <p>出租房间数：1583</p>
+                            <p>空置房间数：204</p>
+                            <p>出租面积：1245863m2</p>
+                            <p>空置面积：523022m2</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-inverse overflow-hidden">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" style="position: relative;">
+                            <a class="accordion-toggle accordion-toggle-styled collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                                <i class="fa fa-plus-circle pull-right"></i>
+                                数据分析中心
+                            </a>
+                            <a class="shuju" style="position: absolute;right: 30px;top: 10px;" onclick="shuju()">查看</a>
+                        </h3>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse">
+                        <div class="panel-body" id="panel-chart" style="height: 400px;overflow: scroll;">
+                            <div id="container" style="width: 100%; height: 250px; max-width: 600px;"></div>
+                            <div id="container2" style="width: 100%; height: 250px; max-width: 600px;"></div>
+                            <div class="row">
+                                <div id="container3" style="width: 50%; height: 250px; max-width: 600px;float: left;"></div>
+                                <div id="container4" style="width: 50%; height: 250px; max-width: 600px;float: left;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 当月任务等 悬浮框 END -->
+    <!-- 紧急预警 悬浮框 -->
+    <div class="row" style="margin: 0;padding: 0;position: absolute;top: 45px;right: 284px;width: 200px;">
+        <div class="col-md-12">
+            <div class="panel-group" style="margin-bottom: 5px;">
+                <div class="panel panel-inverse overflow-hidden" style="background: rgba(255,255,255,0.8);">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" style="position: relative;">
+                            <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion" href="#collapseOne2">
+                                <i class="fa fa-plus-circle pull-right"></i>
+                                紧急预警
+                            </a>
+                            <a class="hetong" style="position: absolute;right: 30px;top: 10px;" onclick="hetong()">查看</a>
+                        </h3>
+                    </div>
+                    <div id="collapseOne2" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <p>合同即将到期：5</p>
+                            <p>已过期合同：2</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-group">
+                <div class="panel panel-inverse overflow-hidden" style="background: rgba(255,255,255,0.8);">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" style="position: relative;">
+                            <a class="accordion-toggle accordion-toggle-styled" data-toggle="collapse" data-parent="#accordion" href="#collapseOne1">
+                                <i class="fa fa-plus-circle pull-right"></i>
+                                财务信息
+                            </a>
+                            <a class="hetong" style="position: absolute;right: 30px;top: 10px;" onclick="hetong()">查看</a>
+                        </h3>
+                    </div>
+                    <div id="collapseOne1" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <p>待核对数：2</p>
+                            <p>待核对金额：85682.00元</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 紧急预警 悬浮框  END-->
+    <!-- 切换cesium -->
+    <div style="position: absolute;top: 50px;left: 90px;">
+        <a class="btn btn-success btn-danger" id="2d" onclick="er()" style="width: 50px;">二维</a><br/>
+        <a class="btn btn-success" id="3d2" onclick="san2()" style="width: 50px;margin-top: 10px;">3D</a><br/>
+        <a class="btn btn-success" id="3d" onclick="san()" style="width: 50px;margin-top: 10px;">摄影</a>
+    </div>
+    <!-- 切换cesium结束 -->
+    <!-- end #content -->
+    </div>
+
+    <!-- begin scroll to top btn -->
+    <a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>
+    <!-- end scroll to top btn -->
+    <!-- #全景弹框 -->
+    <div class="modal  fade" id="modal-message">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">全景</h4>
+                </div>
+                <div class="modal-body" id="modal-body" style="overflow: hidden;">
+                    <iframe src="http://www.pano-on.com/plugins/pano/index.html?pid=sYSesS35R4yIVOJYmYLWMQ&index=0" width="100%" id="quan"></iframe>
+                    <!--<iframe src="http://180.166.157.224:8022" width="100%" id="quan" ></iframe>-->
+                </div>
+                <div class="modal-footer">
+                    <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">关闭</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- #街景弹框 -->
+    <div class="modal  fade" id="modal-message2">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">周边街景</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="panorama"></div>
+                </div>
+                <div class="modal-footer">
+                    <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">关闭</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end page container -->
+    <!-- #名称弹框 -->
+    <div id="meihua" style="width: 100px;background:rgba(0,0,0,0.8);display:none;top:400px;left:200px; position: absolute;z-index: 999;color: #ffffff;font-size: 18px;text-align: center;">美华大楼</div>
+
+    @section Styles{
+        <style>
+        ul li {
+            list-style: none;
+        }
+        /*#page-header{*/
+        /*display: flex;*/
+        /*justify-content: space-around;*/
+        /*}*/
+        #page-header form {
+            float: left;
+            margin-right: 25px;
+        }
+
+            #page-header form select {
+                width: 98px;
+            }
+
+        .navbar-brand {
+            width: 320px;
+        }
+
+        #tankuang {
+            width: 300px;
+            position: absolute;
+            ;
+            right: 0;
+            top: 45px;
+            overflow: auto;
+        }
+            /*滚动条样式*/
+            #tankuang::-webkit-scrollbar { /*滚动条整体样式*/
+                width: 6px; /*高宽分别对应横竖滚动条的尺寸*/
+                height: 6px;
+            }
+
+            #tankuang::-webkit-scrollbar-thumb { /*滚动条里面小方块*/
+                border-radius: 5px;
+                -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+                background: rgba(0,0,0,0.2);
+            }
+
+            #tankuang::-webkit-scrollbar-track { /*滚动条里面轨道*/
+                -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+                border-radius: 0;
+                background: rgba(0,0,0,0.1);
+            }
+
+            #tankuang .panel {
+                background: rgba(255,255,255,0.8);
+            }
+        /*滚动条样式*/
+        #panel-chart::-webkit-scrollbar { /*滚动条整体样式*/
+            width: 6px; /*高宽分别对应横竖滚动条的尺寸*/
+            height: 6px;
+        }
+
+        #panel-chart::-webkit-scrollbar-thumb { /*滚动条里面小方块*/
+            border-radius: 5px;
+            -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+            background: rgba(0,0,0,0.2);
+        }
+
+        #panel-chart::-webkit-scrollbar-track { /*滚动条里面轨道*/
+            -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+            border-radius: 0;
+            background: rgba(0,0,0,0.1);
+        }
+
+        #panel-chart .panel {
+            background: rgba(255,255,255,0.5);
+        }
+
+        .row > [class*=col-].ui-sortable {
+            min-height: 0;
+        }
+        /*#tankuang .row .panel-body{*/
+        /*background:rgba(255,255,255,0.5)!important;*/
+        /*}*/
+        /*leaflet风格气泡窗口样式模板*/
+        .leaflet-popup {
+            position: absolute;
+        }
+
+        .leaflet-popup-close-button {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 4px 4px 0 0;
+            width: 18px;
+            height: 14px;
+            font: 16px/14px Tahoma, Verdana, sans-serif;
+            color: #c3c3c3;
+            text-decoration: none;
+            font-weight: bold;
+            background: transparent;
+            z-index: 10;
+        }
+
+        .leaflet-popup-content-wrapper {
+            max-height: 500px;
+            /*height:220px;*/
+            width: 330px;
+            overflow-y: auto;
+            background: rgba(0,0,0,0.5);
+            box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+            padding: 1px;
+            padding: 0;
+        }
+
+        .leaflet-popup-content {
+            margin: 13px 19px;
+            line-height: 1.4;
+        }
+
+        .leaflet-popup-tip-container {
+            margin: 0 auto;
+            width: 40px;
+            height: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .leaflet-popup-tip {
+            background: white;
+            box-shadow: 0 3px 14px rgba(0,0,0,0.4);
+            width: 30px;
+            height: 30px;
+            padding: 1px;
+            margin: -20px auto 0;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        .ul li {
+            float: left;
+            margin-right: 5px;
+        }
+
+        .footers {
+            padding: 10px 0 10px 0;
+            text-align: center;
+            display: flex;
+            justify-content: space-around;
+            margin: 0 5px 0 5px;
+        }
+
+        .footersa {
+            color: #000000;
+            background: #eee;
+            font-size: 10px;
+            border-radius: unset;
+            padding: 2px 28px 2px 28px;
+        }
+    </style>
+    }
+
+@section scripts{
+    <script src="~/theme/assets/js/highcharts.js"></script>
+    @*@Html.IncludeScript("http://api.map.baidu.com/api?v=2.0&ak=mGAIH1jhIoASGa67nHP3oMCXK3lGF8PB")*@
+    @Html.IncludeScript("/theme/assets/Cesium/Cesium.js")
+    @Html.IncludeScript("/theme/js/config.js")
+    <script type="text/javascript" src="~/theme/js/require.min.js" data-main="js/main"></script>
+    <script src="~/theme/assets/js/apps.min.js"></script>
+
+
+    <script>
+        var propertyService = abp.services.app.propertyAppServices;
+
+        //退出登录
+        function out() {
+            swal({
+                    title: "确定退出吗？",
+                    // text: "你将无法恢复该虚拟文件！",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "确定",
+                    cancelButtonText: "取消",
+                    closeOnConfirm: false
+                },
+                function() {
+                    window.location.href = "login.html";
+                }
+            );
+        };
+
+        //街景全景弹框宽高
+        function tan() {
+            if ($('body').width() - 160 > 1550) {
+                $('.modal-dialog').width(1550);
+            } else {
+                $('.modal-dialog').width(1000);
+            };
+            if ($('body').height() - 300 > 600) {
+                $('#quan').parent('.modal-body').height(660);
+                $('#quan').height(640);
+                $('#panorama').parent('.modal-body').height(660);
+                $('#panorama').height(640);
+            } else {
+                $('#quan').parent('.modal-body').height(500);
+                $('#quan').height(540);
+                $('#panorama').parent('.modal-body').height(500);
+                $('#panorama').height(540);
+            };
+        }
+
+        var quan = function() {
+            $('#modal-message').modal('show');
+            tan();
+            $('#trackPopUp').hide();
+            $('#trackPopUps').hide();
+//
+//             window.open("http://180.166.157.224:8022");
+        };
+        var stree = function() {
+            $('#modal-message2').modal('show');
+            $('#trackPopUp').hide();
+            $('#trackPopUps').hide();
+
+        };
+        var money = function() {
+            window.location.href = "资产详情.html"
+        };
+        $('#cesiumContainer2').width($('#allmap').width() - 20);
+        var san = function() {
+            $('#allmap').hide();
+            $('#cesiumContainer2').hide();
+            $('#cesiumContainer').show();
+            $('#3d').addClass('btn-danger').siblings().removeClass('btn-danger');
+        };
+        var san2 = function() {
+            $('#allmap').hide();
+            $('#cesiumContainer').hide();
+            $('#cesiumContainer2').show();
+            $('#3d2').addClass('btn-danger').siblings().removeClass('btn-danger');
+            // window.open("page_blank2.html");
+        };
+        var er = function() {
+            $('#cesiumContainer').hide();
+            $('#cesiumContainer2').hide();
+            $('#allmap').show();
+            $('#2d').addClass('btn-danger').siblings().removeClass('btn-danger');
+        };
+        //根据浏览器缩进弹框大小
+        $(window).resize(function() { //当浏览器大小变化时
+            tan();
+        });
+
+
+        //百度地图
+        //街景地图
+        var panorama = new BMap.Panorama('panorama'); //默认为显示道路指示控件
+        panorama.setPosition(new BMap.Point(121.462541, 31.201475));
+        //计算地图高度
+        var height = $('body').height() - $('#header').height() - 45;
+        $('#allmap').height(height - 2);
+        $('#cesiumContainer').height(height - 2);
+        $('#cesiumContainer2').height(height - 2);
+        window.onresize = function() {
+            var height = $('body').height() - $('#header').height() - 45;
+            $('#allmap').height(height - 2);
+            $('#cesiumContainer').height(height - 2);
+            $('#cesiumContainer2').height(height - 2);
+        };;
+
+        //百度地图
+        // 百度地图API功能
+        var map = new BMap.Map("allmap"); // 创建Map实例
+        map.centerAndZoom(new BMap.Point(121.476748, 31.230621), 12); // 初始化地图,管理中心点坐标和地图级别
+
+
+        var top_left_control = new BMap.ScaleControl({
+            anchor: BMAP_ANCHOR_TOP_LEFT
+        }); // 左上角，添加比例尺
+        var top_left_navigation = new BMap.NavigationControl(); //左上角，添加默认缩放平移控件
+
+        /*缩放控件type有四种类型:
+        BMAP_NAVIGATION_CONTROL_SMALL：仅包含平移和缩放按钮；BMAP_NAVIGATION_CONTROL_PAN:仅包含平移按钮；BMAP_NAVIGATION_CONTROL_ZOOM：仅包含缩放按钮*/
+
+        //添加地图类型控件
+        map.addControl(new BMap.MapTypeControl({
+            mapTypes: [
+                BMAP_NORMAL_MAP,
+                BMAP_HYBRID_MAP
+            ]
+        }));
+        map.setCurrentCity("上海"); // 管理地图显示的城市 此项是必须管理的
+        map.enableScrollWheelZoom(true); //开启鼠标滚轮缩放
+        map.addControl(top_left_control);
+        map.addControl(top_left_navigation);
+
+        // 编写自定义函数,创建标注
+        function addMarker(point) {
+            var myIcon1 = new BMap.Icon("/theme/assets/img/milk1.png", new BMap.Size(22, 30)); //定义自己的标注
+            var marker = new BMap.Marker(point, { icon: myIcon1 });
+            map.addOverlay(marker);
+        }
+
+        // 随机向地图添加25个标注
+        var bounds = map.getBounds();
+        var sw = bounds.getSouthWest();
+        var ne = bounds.getNorthEast();
+        var lngSpan = Math.abs(sw.lng - ne.lng);
+        var latSpan = Math.abs(ne.lat - sw.lat);
+        //for (var i = 0; i < 25; i ++) {
+        //    var point = new BMap.Point(sw.lng + lngSpan * (Math.random() * 0.7),
+        //        ne.lat - latSpan * (Math.random() * 0.7));
+        //    addMarker(point);
+        //}
+        //var point11 = new BMap.Point(121.46,31.25);
+        //addMarker(point11);
+        //标记点内的内容
+        var sContent =
+            "<h4 style='margin:0 0 5px 0;padding:0.2em 0'>上海牛奶集团有限公司</h4>" +
+                '<div style="width: 100%;height: 120px;overflow: hidden;margin-top: 20px;background: url(/theme/assets/img/build.jpg) no-repeat ;background-size: 100% 100%;"></div>' +
+                '<div style="margin-top: 10px;"><div class="row"  style="font-size: 12px;color: #000000;margin: 0 0 10px 0;"><div class="col-xs-12">地址：上海市黄浦区西藏中路632号</div></div><div class="row"  style="font-size: 12px;margin: 5px 0 5px 0;font-size: 10px;"><div class="col-xs-6">建筑总面积：9527㎡</div><div class="col-xs-6">已出租总面积：3679㎡</div></div>' +
+                '<div class="row"  style="font-size: 12px;margin: 5px 0 5px 0;font-size: 10px;"><div class="col-xs-6">产权情况：有产权</div><div class="col-xs-6">房间总数：127</div></div><div class="row" style="font-size: 12px;margin: 5px 0 5px 0;font-size: 10px;"><div class="col-xs-6">出租房间：127</div><div class="col-xs-6">空置房屋：0</div></div></div>' +
+                '<div  class="footers"><a class="btn-xs btn-default footersa"   href=\'javascript:;\'onclick=\'quan()\' style="white-space :nowrap">进入全景</a>&nbsp;<a class="btn-xs btn-default footersa"  href=\'javascript:;\'onclick=\'stree()\' style="white-space :nowrap">进入街景</a>&nbsp;<a class="btn-xs btn-default footersa" href=\'javascript:;\'onclick=\'money()\'style="white-space :nowrap" >资产信息</a></div>' +
+                "</div>";
+        var infoWindow = new BMap.InfoWindow(sContent); // 创建信息窗口对象
+
+        //添加枫林路标记
+        //var pointXZZL = new BMap.Point(121.462761, 31.201498);
+        //var myIcon2 = new BMap.Icon("/theme/assets/img/milk2.png", new BMap.Size(22, 30)); //定义自己的标注
+        //var markerXZZL = new BMap.Marker(pointXZZL, { icon: myIcon2 });
+        // var icon = new BMap.Icon("assets/img/milk2.png",new BMap.Size(14,14),{anchor: new BMap.Size(7,10)});
+        // var mkr =new BMap.Marker(point, { icon: icon});//创建标注
+        //map.addOverlay(markerXZZL);
+        //markerXZZL.setAnimation(BMAP_ANIMATION_BOUNCE);
+
+        //markerXZZL.addEventListener("click",
+        //    function() {
+        //        this.openInfoWindow(infoWindow);
+        //        //图片加载完毕重绘infowindow
+        //        document.getElementById('imgDemo').onload = function() {
+        //            infoWindow.redraw(); //防止在网速较慢，图片未加载时，生成的信息框高度比图片的总高度小，导致图片部分被隐藏
+        //        }
+        //    });
+        //百度地图搜索开始
+
+        //
+        function G(id) {
+            return document.getElementById(id);
+        }
+
+        var ac = new BMap.Autocomplete(//建立一个自动完成的对象
+            {
+                "input": "suggestId",
+                "location": map
+            });
+
+        ac.addEventListener("onhighlight",
+            function(e) { //鼠标放在下拉列表上的事件
+                var str = "";
+                var _value = e.fromitem.value;
+                var value = "";
+                if (e.fromitem.index > -1) {
+                    value = _value.province + _value.city + _value.district + _value.street + _value.business;
+                }
+                str = "FromItem<br />index = " + e.fromitem.index + "<br />value = " + value;
+
+                value = "";
+                if (e.toitem.index > -1) {
+                    _value = e.toitem.value;
+                    value = _value.province + _value.city + _value.district + _value.street + _value.business;
+                }
+                str += "<br />ToItem<br />index = " + e.toitem.index + "<br />value = " + value;
+                // G("searchResultPanel").innerHTML = str;
+            });
+
+        var myValue;
+        ac.addEventListener("onconfirm",
+            function(e) { //鼠标点击下拉列表后的事件
+                var _value = e.item.value;
+                myValue = _value.province + _value.city + _value.district + _value.street + _value.business;
+                // G("searchResultPanel").innerHTML ="onconfirm<br />index = " + e.item.index + "<br />myValue = " + myValue;
+
+                setPlace();
+            });
+
+        function setPlace() {
+            // map.clearOverlays();    //清除地图上所有覆盖物
+            function myFun() {
+                var pp = local.getResults().getPoi(0).point; //获取第一个智能搜索的结果
+                map.centerAndZoom(pp, 18);
+                map.addOverlay(new BMap.Marker(pp)); //添加标注
+            }
+
+            var local = new BMap.LocalSearch(map,
+                { //智能搜索
+                    onSearchComplete: myFun
+                });
+            local.search(myValue);
+        }
+
+
+        
+
+        //标记点内的内容
+        var sContent2 =
+            "<h4 class='bai-header'>上海牛奶集团有限公司</h4>" +
+            '<div class="bai-box"></div>' +
+            '<div style="margin-top: 10px;"><div class="row"  style="font-size: 12px;color: #000000;margin: 0 0 10px 0;"><div class="col-xs-12 bai-address">地址：上海市黄浦区西藏中路632号</div></div><div class="row bai-font"><div class="col-xs-6 bai-1">建筑总面积：9527㎡</div><div class="col-xs-6 bai-2">已出租总面积：3679㎡</div></div>' +
+            '<div class="row bai-font"><div class="col-xs-6 bai-3">产权情况：有产权</div><div class="col-xs-6 bai-4">房间总数：127</div></div><div class="row bai-font"><div class="col-xs-6 bai-5">出租房间：127</div><div class="col-xs-6 bai-6">空置房屋：0</div></div></div>' +
+            '<div  class="footers"><a class="btn-xs btn-default footersa"   href=\'javascript:;\'onclick=\'quan()\' style="white-space :nowrap">进入全景</a>&nbsp;<a class="btn-xs btn-default footersa"  href=\'javascript:;\'onclick=\'stree()\' style="white-space :nowrap">进入街景</a>&nbsp;<a class="btn-xs btn-default footersa" href=\'javascript:;\'onclick=\'money()\'style="white-space :nowrap" >资产信息</a></div>' +
+            "</div>";
+
+        function mation(id, mark) {
+            var input = { id: id };
+            propertyService.getPropertyById(input).done(function (data) {
+                console.log(data);
+
+                var roomAmount = 0;
+                if (data.rooms != null) {
+                    roomAmount = data.rooms.length;
+                }
+
+                var buildingArea = 0;
+                if (data.propertyInfo != null) {
+                    buildingArea = data.propertyInfo.buildingArea;
+                    if (buildingArea == "") buildingArea = "0";
+                }
+
+
+
+                var s = "<h4 style='margin:0 0 5px 0;padding:0.2em 0'>" + data.buildingName + "</h4>" +
+                    '<div style="width: 100%;height: 120px;overflow: hidden;margin-top: 20px;background: url('+data.coverPhoto+') no-repeat ;background-size: 100% 100%;"></div>' +
+                    '<div style="margin-top: 10px;"><div class="row"  style="font-size: 12px;color: #000000;margin: 0 0 10px 0;"><div class="col-xs-12">地址：' + data.address + '</div></div><div class="row"  style="font-size: 12px;margin: 5px 0 5px 0;font-size: 10px;"><div class="col-xs-6">建筑总面积：' + buildingArea + '㎡</div><div class="col-xs-6">已出租总面积：3679㎡</div></div>' +
+                    '<div class="row"  style="font-size: 12px;margin: 5px 0 5px 0;font-size: 10px;"><div class="col-xs-6">产权情况：' + data.propertyRight + '</div><div class="col-xs-6">房间总数：' + roomAmount + '</div></div><div class="row" style="font-size: 12px;margin: 5px 0 5px 0;font-size: 10px;"><div class="col-xs-6">出租房间：0</div><div class="col-xs-6">空置房屋：0</div></div></div>' +
+                    '<div  class="footers"><a class="btn-xs btn-default footersa"   href=\'javascript:;\'onclick=\'quan()\' style="white-space :nowrap">进入全景</a>&nbsp;<a class="btn-xs btn-default footersa"  href=\'javascript:;\'onclick=\'stree()\' style="white-space :nowrap">进入街景</a>&nbsp;<a class="btn-xs btn-default footersa" href=\'javascript:;\'onclick=\'money()\'style="white-space :nowrap" >资产信息</a></div>' +
+                    "</div>";
+
+                var win = new BMap.InfoWindow(s);
+                mark.openInfoWindow(win);
+            });
+        }
+
+        function getProperties() {
+            propertyService.getAllProperty().done(function (data) {
+                console.log(data);
+                for (var i = 0; i < data.length; i++) {
+                    var points = new BMap.Point(data[i].lng, data[i].lat);
+                    var labels = data[i].id;
+                    addMarkers(points, labels);
+                }
+            });
+        }
+
+        function getPropertyStatistics() {
+            propertyService.getPropertyStatistics().done(function (data) {
+                console.log(data);
+                $('.asset').empty().append("<p>资产总数：" +
+                    data.propertyAmount +
+                    "</p><p>有产证：" +
+                    data.propertyHasCertAmount +
+                    "</p><p>无产证：" +
+                    data.propertyNoCertAmount +
+                    "</p><p>有使用权：" +
+                    data.propertyUseRightAmount +
+                    "</p><p>房间总数：" +
+                    data.roomAmount +
+                    "</p><p>资产总面积：" +
+                    data.totalArea +
+                    " m2</p>");
+            });
+        }
+
+        // 编写自定义函数,创建标注
+        function addMarkers(points, labels) {
+            var myIcon2 = new BMap.Icon("/theme/assets/img/milk2.png", new BMap.Size(22, 30));  //定义自己的标注
+            var markers = new BMap.Marker(points, { icon: myIcon2 });
+            console.log(markers);
+            map.addOverlay(markers);
+            var label = new BMap.Label(labels, {
+                offset: new BMap.Size(15, -25)
+            });
+            label.setStyle({ opacity: "0" });//隐藏标注
+            markers.setLabel(label); //为标注添加一个标签
+            markers.setAnimation(BMAP_ANIMATION_BOUNCE);
+            markers.addEventListener("click", function () {
+                var id = this.Ac.outerText;
+                mation(id,this);
+                
+                // //图片加载完毕重绘infowindow
+                // document.getElementById('imgDemo').onload = function (){
+                //     infoWindow.redraw();   //防止在网速较慢，图片未加载时，生成的信息框高度比图片的总高度小，导致图片部分被隐藏
+                // }
+            });
+        }
+
+        getProperties();
+        getPropertyStatistics();
+        //百度地图结束
+        //CESIUM地图开始
+
+        var viewer;
+        var host = document.location.toString().match(/file:\/\//)
+            ? "http://localhost:8090"
+            : 'http://' + document.location.host;
+
+        function onload(Cesium) {
+            var viewer = new Cesium.Viewer('cesiumContainer',
+                {
+                    imageryProvider: new Cesium.BingMapsImageryProvider({
+                        key:
+                            "AjQhMyw76oicHqFz7cUc3qTEy3M2fC2YIbcHjqgyMPuQprNVBr3SsvVdOfmlVc0v", //可至官网（https://www.bingmapsportal.com/）申请key
+                        url: URL_CONFIG.BINGMAP
+                    }),
+                    infoBox: false,
+                    selectionIndicator: false,
+                    projectionPicker: true
+                });
+            viewer._cesiumWidget._creditContainer.style.display = "none";
+
+            //var viewer = new Cesium.Viewer('cesiumContainer',{});
+
+            var scene = viewer.scene;
+            var widget = viewer.cesiumWidget;
+            $('#loadingbar').remove();
+            try {
+                //场景添加S3M图层服务
+                var building_config =
+                    "http://139.219.104.154:8090/iserver/services/3D-GuangMingCeShi13/rest/realspace/datas/Config1/config";
+                var promise = scene.addS3MTilesLayerByScp(building_config,
+                    {
+                        name: 'building'
+                    });
+                Cesium.when(promise,
+                    function(layer) {
+                        //设置相机位置，定位至模型
+                        //var point = Cesium.Cartesian3.fromDegrees(121.45238, 31.19003, 800.0);
+                        var point = Cesium.Cartesian3.fromDegrees(121.45004384458161, 31.19729169787894, 98);
+                        scene.camera.setView({
+                            //new Cesium.Rectangle(west, south, east, north)
+                            destination: point,
+                            orientation: {
+                                //heading : Cesium.Math.toRadians(0),
+                                //pitch :  Cesium.Math.toRadians(-30.0),
+                                //roll : Cesium.Math.toRadians(0)
+                                heading: 1.5645707051798023,
+                                pitch: -0.37691440069695203,
+                                roll: 6.283185307179586
+                            }
+                        });
+                    },
+                    function(e) {
+                        if (widget._showRenderLoopErrors) {
+                            var title = '渲染时发生错误，已停止渲染。';
+                            widget.showErrorPanel(title, undefined, e);
+                        }
+                    });
+                //setInterval(function () {
+                //    console.log(viewer.scene.camera);
+                //},5000);
+            } catch (e) {
+                if (widget._showRenderLoopErrors) {
+                    var title = '渲染时发生错误，已停止渲染。';
+                    widget.showErrorPanel(title, undefined, e);
+                }
+            }
+
+
+            //////////////////////////////////////////////////////////////////////////
+// 单击事件
+//////////////////////////////////////////////////////////////////////////
+            var ellipsoid = viewer.scene.globe.ellipsoid;
+            var longitudeString = null;
+            var latitudeString = null;
+            var height = null;
+            var cartesian = null;
+            var handler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
+            handler.setInputAction(function(movement) {
+//点击
+                    var pick = viewer.scene.pick(movement.position);
+                    if (typeof (pick) == "undefined") {
+                        $('#trackPopUps').hide();
+                    } else {
+                        if (pick.id._id == 'gmb1') {
+                            $("#cesiumContainer").bind("click",
+                                function(e) {
+                                    var xx = e.originalEvent.x || e.originalEvent.layerX || 0;
+                                    var yy = e.originalEvent.y || e.originalEvent.layerY || 0;
+                                    $('#trackPopUps').css("left",
+                                        xx - $('.leaflet-popup-content-wrapper').width() / 2 + 'px');
+                                    $('#trackPopUps').css("top",
+                                        yy - $('.leaflet-popup-content-wrapper').height() - 80 + 'px');
+                                    $(this).unbind("click");
+                                });
+                            $('#trackPopUps').show();
+                        }
+                    }
+
+//通过指定的椭球或者地图对应的坐标系，将鼠标的二维坐标转换为对应椭球体三维坐标
+                    cartesian = viewer.camera.pickEllipsoid(movement.position, ellipsoid);
+                    if (cartesian) {
+//将笛卡尔坐标转换为地理坐标
+                        var cartographic = ellipsoid.cartesianToCartographic(cartesian);
+//将弧度转为度的十进制度表示
+                        longitudeString = Cesium.Math.toDegrees(cartographic.longitude);
+                        latitudeString = Cesium.Math.toDegrees(cartographic.latitude);
+//获取相机高度
+                        height = Math.ceil(viewer.camera.positionCartographic.height);
+
+                        var t = 'heading:' +
+                            viewer.camera.heading +
+                            ',pitch:' +
+                            viewer.camera.pitch +
+                            ',roll:' +
+                            viewer.camera.roll;
+                        var result = viewer.camera.pickEllipsoid(new Cesium.Cartesian2(viewer.canvas.clientWidth / 2,
+                            viewer.canvas.clientHeight / 2));
+                        var curPosition = Cesium.Ellipsoid.WGS84.cartesianToCartographic(result);
+                        var lon = curPosition.longitude * 180 / Math.PI;
+                        var lat = curPosition.latitude * 180 / Math.PI;
+
+                        var hbheight = viewer.scene.globe.getHeight(cartographic);
+
+                        console.log(longitudeString + ', ' + latitudeString + "," + height);
+                        console.log('中心点:' + lon + ':' + lat);
+                        console.log(t);
+                        console.log(hbheight);
+                    } else {
+                    }
+                },
+                Cesium.ScreenSpaceEventType.LEFT_CLICK);
+            viewer.entities.add({
+                id: 'gmb1',
+                position: Cesium.Cartesian3.fromDegrees(121.45183285581844, 31.197127482774174, 25),
+                name: '标签',
+                billboard: {
+                    image: 'assets/img/icon1.png',
+                    width: 30,
+                    height: 40
+                }
+            });
+
+
+        }
+
+        //动态添加气泡窗口DIV
+        var infoDivs =
+            '<div id="trackPopUps" style="display:none;top:400px;padding:5px;left:100px; position: absolute;z-index: 1100;" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">' +
+                '<div id="trackPopUpContent" class="leaflet-popup" style="top:5px;left:0;">' +
+                '<a class="leaflet-popup-close-button" href="#">×</a>' +
+                '<div class="leaflet-popup-content-wrapper">' +
+                '<h5 style="background:rgba(0,0,0,1);position: absolute;top: -10px;width: 330px;height: 30px;line-height: 30px;text-align: left;color: #ffffff;font-size: ' +
+                '12px;">上海牛奶集团有限公司</h5>' +
+                '<div id="trackPopUpLink" class="leaflet-popup-content" style="width: 100%; padding: 0;margin: 0;">' +
+                '<div style="width: 100%;height: 120px;overflow: hidden;margin-top: 20px;background: url(assets/img/build.jpg) no-repeat ;background-size: 100% 100%;"></div>' +
+                '<div style="margin-left: 10px;margin-top: 10px;"><div class="row"  style="font-size: 12px;color: #ffffff;margin: 0 0 10px 0;"><div class="col-xs-12">地址：上海市黄浦区西藏中路632号</div></div><div class="row"  style="font-size: 12px;color: #ffffff;margin: 5px 0 5px 0;font-size: 10px;"><div class="col-xs-6">建筑总面积：9527㎡</div><div class="col-xs-6">已出租总面积：3679㎡</div></div>' +
+                '<div class="row"  style="font-size: 12px;color: #ffffff;margin: 5px 0 5px 0;font-size: 10px;"><div class="col-xs-6">产权情况：有产权</div><div class="col-xs-6">房间总数：127</div></div><div class="row" style="font-size: 12px;color: #ffffff;margin: 5px 0 5px 0;font-size: 10px;"><div class="col-xs-6">出租房间：127</div><div class="col-xs-6">空置房屋：0</div></div></div>' +
+                '<div  class="footers"><a class="btn-xs btn-default footersa"   href=\'javascript:;\'onclick=\'quan()\'>进入全景</a>&nbsp;<a class="btn-xs btn-default footersa"  href=\'javascript:;\'onclick=\'stree()\'>进入街景</a>&nbsp;<a class="btn-xs btn-default footersa" href=\'javascript:;\'onclick=\'money()\'>资产信息</a></div>' +
+                '</div>' +
+                '</div>' +
+                '<div class="leaflet-popup-tip-container">' +
+                '<div class="leaflet-popup-tip"></div>' +
+                '</div>' +
+                '</div>' +
+                '</div>';
+        $('#cesiumContainer').append(infoDivs);
+        $('.leaflet-popup-close-button').click(function() {
+            $('#trackPopUps').hide();
+        });
+        //Cesium地图结束
+        $('#panorama').height($('#allmap').height() - 100);
+        $('.modal-dialog').width($('#allmap').width() - 100);
+
+        function hetong() {
+            window.open('紧急预警.html');
+        };
+
+        function renwu() {
+            window.open('任务提示.html');
+        };
+
+        function zichan() {
+            window.open('资产信息.html');
+        };
+
+        function zuping() {
+            window.open('租凭信息.html');
+        };
+
+        function shuju() {
+            window.open('数据分析中心.html');
+        };
+    </script>
+    <script type="text/javascript">
+        $(function() {
+            $('#container').highcharts({
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    backgroundColor: 'rgba(255,255,255,0.5)'
+                },
+                credits: {
+                    enabled: false
+                },
+                title: {
+                    text: '出租率：73%',
+                    align: 'left'
+                },
+                tooltip: {
+                    headerFormat: '{series.name}<br>',
+                    pointFormat: '{point.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: false
+                        },
+                        showInLegend: true
+                    }
+                },
+                series: [
+                    {
+                        type: 'pie',
+                        name: '租房比率',
+                        data: [
+                            ['出租房204', 204],
+                            ['待租放53', 53],
+                        ]
+                    }
+                ]
+            });
+            $('#container2').highcharts({
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    backgroundColor: 'rgba(255,255,255,0.5)'
+                },
+                credits: {
+                    enabled: false
+                },
+                colors: ['#55B13E', '#FE965C'],
+                title: {
+                    text: '收缴率：90%',
+                    align: 'left'
+                },
+                tooltip: {
+                    headerFormat: '{series.name}<br>',
+                    pointFormat: '{point.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: false
+                        },
+                        showInLegend: true
+                    }
+                },
+                series: [
+                    {
+                        type: 'pie',
+                        name: '收缴比率',
+                        data: [
+                            ['已收缴1585680.00', 1585680.00],
+                            ['待收缴562235.00', 562235.00],
+                        ]
+                    }
+                ]
+            });
+            $('#container3').highcharts({
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    backgroundColor: 'rgba(255,255,255,0.5)'
+                },
+                credits: {
+                    enabled: false
+                },
+                legend: {
+                    enabled: false
+                },
+                colors: ['#90C7AE', '#61A06C'],
+                title: {
+                    text: '违约率：74%',
+                    align: 'left'
+                },
+                tooltip: {
+                    headerFormat: '{series.name}<br>',
+                    pointFormat: '{point.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: false
+                        },
+                        showInLegend: true
+                    }
+                },
+                series: [
+                    {
+                        type: 'pie',
+                        name: '收缴比率',
+                        data: [
+                            ['已收缴1585680.00', 74],
+                            ['待收缴562235.00', 26],
+                        ]
+                    }
+                ]
+            });
+            $('#container4').highcharts({
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    backgroundColor: 'rgba(255,255,255,0.5)'
+
+                },
+                legend: {
+                    enabled: false
+                },
+                credits: {
+                    enabled: false
+                },
+                colors: ['#90C7AE', '#61A06C'],
+                title: {
+                    text: '延迟率：90%',
+                    align: 'left'
+                },
+                tooltip: {
+                    headerFormat: '{series.name}<br>',
+                    pointFormat: '{point.name}: <b>{point.percentage:.1f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: false
+                        },
+                        showInLegend: true
+                    }
+                },
+                series: [
+                    {
+                        type: 'pie',
+                        name: '收缴比率',
+                        data: [
+                            ['已收缴1585680.00', 74],
+                            ['待收缴562235.00', 26],
+                        ]
+                    }
+                ]
+            });
+        });
+
+    </script>
+    <script>
+        $(document).ready(function() {
+            App.init();
+            $("#loadingbar").hide();
+            $('.sidebar-minify-btn').click().hide();
+
+
+            
+
+        });
+    </script>
+}
+)

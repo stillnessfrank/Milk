@@ -1,0 +1,62 @@
+﻿@using Abp.Collections.Extensions
+@using BIMFM.Web.Views
+@model BIMFM.Web.Models.Layout.LeftMenuViewModel
+@{
+    var calculateMenuUrl = new Func<string, string>((url) =>
+    {
+        if (string.IsNullOrEmpty(url))
+        {
+            return ApplicationPath;
+        }
+
+        if (UrlChecker.IsRooted(url))
+        {
+            return url;
+        }
+
+        return ApplicationPath + url;
+    });
+}
+
+<!-- begin #sidebar -->
+<div id="sidebar" class="sidebar">
+    <!-- begin sidebar scrollbar -->
+    <div data-scrollbar="true" data-height="100%">
+        <!-- begin sidebar user -->
+        <ul class="nav">
+            <li class="nav-profile">
+                <div class="image">
+                    <a href="javascript:;"><img src="~/theme/assets/img/user-13.jpg" alt="" /></a>
+                </div>
+                <div class="info">
+                    Sean Ngu
+                    <small>Front end developer</small>
+                </div>
+            </li>
+        </ul>
+        <!-- end sidebar user -->
+        <ul class="nav">
+        @foreach (var menuItem in Model.MainMenu.Items)
+        {
+            <li style="@(Model.ActiveMenuItemController == menuItem.Target ? "background:#00acac;" : "")">
+                <a title="@menuItem.DisplayName" href="@(menuItem.Url!="#"?calculateMenuUrl(menuItem.Url) : "javascript:void(0)")">
+                    <div class="icon-img">
+                        @if (!string.IsNullOrWhiteSpace(menuItem.Icon))
+                        {
+                            <img src="@menuItem.Icon" width="25px" height="25px;">
+                        }
+                    </div>
+                </a>
+            </li>
+        }
+        <!-- begin sidebar minify button -->
+        <li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
+        <!-- end sidebar minify button -->
+        </ul>
+    </div>
+    <!-- end sidebar scrollbar -->
+</div>
+<div class="sidebar-bg"></div>
+<!-- end #sidebar -->
+
+

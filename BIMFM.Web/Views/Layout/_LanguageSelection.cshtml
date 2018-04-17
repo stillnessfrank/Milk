@@ -1,0 +1,36 @@
+﻿@model BIMFM.Web.Models.Layout.LanguageSelectionViewModel
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        @if (@Model.CurrentLanguage.Name == "en")
+        {
+            <i class="flag-icon flag-icon-us"></i> 
+        }
+        @if (@Model.CurrentLanguage.Name == "zh-CN")
+        {
+            <i class="flag-icon flag-icon-cn"></i> 
+        }
+    </a>
+    <div class="dropdown-menu dropdown-menu-right animated bounceInDown">
+        @foreach (var language in Model.Languages)
+        {
+            if (language.Name == "en" || language.Name == "zh-CN")
+            {
+                if (language.Name != Model.CurrentLanguage.Name)
+                {
+                    if(language.Name == "en")
+                    {
+                        <a class="dropdown-item" href="@(ApplicationPath)AbpLocalization/ChangeCulture?cultureName=@(language.Name)&returnUrl=@(Request.Url)">
+                            <i class="flag-icon flag-icon-us"></i> English
+                        </a>
+                    }
+                    if (language.Name == "zh-CN")
+                    {
+                        <a class="dropdown-item" href="@(ApplicationPath)AbpLocalization/ChangeCulture?cultureName=@(language.Name)&returnUrl=@(Request.Url)">
+                            <i class="flag-icon flag-icon-cn"></i> 中文
+                        </a>
+                    }
+                }
+            }
+        }
+     </div>
+</li>

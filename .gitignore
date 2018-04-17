@@ -1,0 +1,24 @@
+﻿################################################################################
+# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
+################################################################################
+
+/.vs/BIMFM/v14
+/.vs/config
+/BIMFM.Application/bin
+/BIMFM.Application/obj
+/BIMFM.Core/bin
+/BIMFM.Core/obj
+/BIMFM.EntityFramework/bin
+/BIMFM.EntityFramework/obj
+/BIMFM.WebApi/bin
+/BIMFM.WebApi/obj
+/BIMFM.Web/bin
+/BIMFM.Web/obj
+/BIMFM.Web/FileUpload
+/Tests/BIMFM.Tests/obj/Debug
+/Tests/BIMFM.Tests/obj/Release
+/Tools/BIMFM.Migrator/obj/Debug
+/Tools/BIMFM.Migrator/obj/Release
+/BIMFM.Web/obj/Release
+/BIMFM.Web/obj/Debug
+/BIMFM.Web/Properties/PublishProfiles

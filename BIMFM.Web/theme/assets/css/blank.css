@@ -1,0 +1,94 @@
+body{
+    overflow: hidden;
+}
+ul li{
+    list-style: none;
+}
+#header{
+    width: 100%;
+    height: 78px;
+    background: rgba(51, 51, 51, 1);
+    color: #ffffff;
+    border: 1px solid rgba(161, 161, 161, 1) ;
+    overflow: hidden;
+}
+.header-center{
+    height: 70px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+.logo1{
+    height: 70px;
+    width: 69px;
+    float: left;
+}
+.header-title{
+    float: left;
+    margin-left: 4px;
+    margin-top: 10px;
+    padding-right: 15px;
+    white-space: nowrap;
+    border-right: 1px solid #ffffff;
+}
+.header-title p:first-child{
+    font-size: 24px;
+}
+.header-title p:last-child{
+    font-size: 13px;
+}
+.header-title p{
+    margin-bottom: 0;
+}
+.header-title2 {
+    float: left;
+    margin-left: 15px;
+}
+.header-title2 p{
+    margin-top:16px;
+    font-size: 20px;
+}
+.user{
+    height: 70px;
+    line-height: 70px;
+    width: 69px;
+    float: right;
+    margin-right: 20px;
+}
+#stairs{
+    width: 60px;
+    height: 100%;
+    background:rgba(51, 51, 51, 1) ;
+    border: 1px solid rgba(161, 161, 161, 1) ;
+    overflow: hidden;
+    position: absolute;top: 78px;
+}
+#stairs ul{
+    padding-left: 0;
+    text-align: center;
+}
+#stairs ul li{
+    padding-top: 20px;
+}
+#stairs ul li a{
+    width:36px;
+    height: 36px;
+    color: rgba(173, 173, 173, 1);
+}
+#stairs ul li a:hover{
+    color: #ffffff;
+}
+#content{
+    height: 45px;
+    background: rgba(51, 51, 51, 1);
+    margin-left: 60px;
+}
+#nav form{
+    float: left;
+}
+#nav form span{
+    color: #ffffff;
+    font-size: 14px;
+}
+#nav form select{
+    width: 98px;
+}

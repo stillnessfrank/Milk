@@ -1,0 +1,33 @@
+﻿<!-- begin #header -->
+<div id="header" class="header navbar navbar-default navbar-fixed-top">
+    <!-- begin container-fluid -->
+    <div class="container-fluid">
+        <!-- begin mobile sidebar expand / collapse button -->
+        <div class="navbar-header">
+            <p><img src="~/theme/assets/img/logo2.png" style="width: 40px;height: 40px;float: left;margin-top: 6px;"/><a href="javascript:;" class="navbar-brand" style="vertical-align:middle;">上海牛奶不动产管理系统</a></p>
+            <button type="button" class="navbar-toggle" data-click="sidebar-toggled">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <!-- end mobile sidebar expand / collapse button -->
+				
+        <!-- begin header navigation right -->
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <form class="navbar-form full-width"  id="global_search">
+                    <div class="form-group">
+                        <input id="suggestId" type="text" class="form-control" placeholder="搜索" />
+                        <button type="button" class="btn btn-search"><i class="fa fa-search"></i></button>
+                    </div>
+                </form>
+            </li>
+            @Html.Action("UserMenuOrLoginLink", "Layout")
+        </ul>
+        <!-- end header navigation right -->
+    </div>
+    <!-- end container-fluid -->
+</div>
+<!-- end #header -->
+

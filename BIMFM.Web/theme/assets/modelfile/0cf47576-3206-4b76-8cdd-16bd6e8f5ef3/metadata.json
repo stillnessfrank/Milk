@@ -1,0 +1,35 @@
+{
+	"version":	"1.0",
+	"metadata":	{
+		"double sided geometry":	{
+			"value":	false
+		},
+		"navigation hint":	{
+			"value":	""
+		},
+		"world bounding box":	{
+			"minXYZ":	[35514.602899, 104104.994612, -93852.946632],
+			"maxXYZ":	[122393.482476, 115274.996335, -29895.301934]
+		},
+		"world up vector":	{
+			"XYZ":	[0, 1, 0]
+		},
+		"world front vector":	{
+			"XYZ":	[0, 0, -1]
+		},
+		"world north vector":	{
+			"XYZ":	[0, 0, 1]
+		},
+		"distance unit":	{
+			"value":	"mm"
+		},
+		"default camera":	{
+			"index":	9
+		},
+		"view to model transform":	{
+			"type":	4
+		},
+		"custom values":	{
+	}
+	}
+}

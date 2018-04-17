@@ -1,0 +1,163 @@
+﻿@using System.Threading
+@using System.Web.Optimization
+@using Abp.Timing
+@using Abp.Web.Mvc.Extensions
+@using Microsoft.Owin.Security
+@{
+    SetAntiForgeryCookie();
+}
+@model BIMFM.Web.Models.Account.LoginFormViewModel
+@{
+    Layout = "";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>@ViewBag.Title</title>
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link href="~/theme/assets/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css" rel="stylesheet" />
+    <link href="~/theme/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/theme/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/theme/assets/css/animate.min.css" rel="stylesheet" />
+    <link href="~/Content/toastr.min.css" rel="stylesheet" />
+    <link href="~/Scripts/sweetalert/sweet-alert.css" rel="stylesheet" />
+    <link href="~/theme/assets/css/style.min.css" rel="stylesheet" />
+    <link href="~/theme/assets/css/style-responsive.min.css" rel="stylesheet" />
+    <link href="~/theme/assets/css/theme/default.css" rel="stylesheet" id="theme" />
+    
+    <script type="text/javascript">
+        //This is used to get the application's root path from javascript. It's useful if you're running application in a virtual directory under IIS.
+        var abp = abp || {}; abp.appPath = '@ApplicationPath';
+    </script>
+
+</head>
+<body class="pace-top">
+    <!-- begin #page-loader -->
+    <div id="page-loader" class="fade in"><span class="spinner"></span></div>
+    <!-- end #page-loader -->
+
+    <!-- page css -->
+    <div class="login-cover">
+        <div class="login-cover-image"><img src="~/theme/assets/img/login-bg/bg-2.jpg" data-id="login-cover-image" alt="" /></div>
+        <div class="login-cover-bg"></div>
+    </div>
+
+    <!-- begin #page-container -->
+    <div id="page-container" class="fade">
+        <!-- begin login -->
+        <div class="login login-v2" data-pageload-addclass="animated fadeIn">
+            <!-- begin brand -->
+            <div class="login-header text-center">
+                <div class="brand">
+                    <img src="~/theme/assets/img/logo1.png" height="45" width="50" />上海牛奶集团
+                    <small style="color: #f1f6ff">ShangHai Dairy Group (版本 Ver 1.0.0)</small>
+                </div>
+            </div>
+            <!-- end brand -->
+            <div class="login-content">
+                <form action="@(Url.Action("Login", "Account"))" method="POST" class="margin-bottom-0">
+                    @if (Model.IsMultiTenancyEnabled)
+                    {
+                        <div class="form-group" style="display: none;">
+                            <div class="col-lg-12">
+                                <input type="text" class="form-control form-control_t" id="TenancyName" placeholder="@L("TenancyName")" required maxlength="@BIMFM.MultiTenancy.Tenant.MaxTenancyNameLength" value="default">
+                                <span class="text-muted form-control_t_s">@L("CanBeEmptyToLoginAsHost")</span>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <input type="hidden" id="TenancyName" value="">
+                    }
+                    <div class="form-group m-b-20">
+                        <input type="text" class="form-control input-lg" id="EmailAddressInput"  placeholder="用户账户" required maxlength="@BIMFM.Users.User.MaxEmailAddressLength"/>
+                    </div>
+                    <div class="form-group m-b-20">
+                        <input type="password" class="form-control input-lg" id="PasswordInput" placeholder="登陆密码" required maxlength="@BIMFM.Users.User.MaxPlainPasswordLength"/>
+                    </div>
+                    <div class="checkbox m-b-20">
+                        <label>
+                            <input type="checkbox" id="RememberMeInput" /> 记住密码
+                        </label>
+                    </div>
+                    <div class="login-buttons">
+                        <button type="submit" class="btn btn-success btn-block btn-lg" id="LoginButton">登陆</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- end login -->
+    </div>
+    <!-- end page container -->
+    
+    @*<script src="~/theme/assets/plugins/jquery/jquery-1.9.1.min.js"></script>*@
+    <script src="~/Scripts/json2.js"></script>
+    <script src="~/Scripts/jquery-1.12.1.min.js"></script>
+    <script src="~/theme/assets/plugins/jquery/jquery-migrate-1.1.0.min.js"></script>
+    <script src="~/theme/assets/plugins/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+    <script src="~/theme/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <!--[if lt IE 9]>
+        <script src="~/theme/assets/crossbrowserjs/html5shiv.js"></script>
+        <script src="~/theme/assets/crossbrowserjs/respond.min.js"></script>
+        <script src="~/theme/assets/crossbrowserjs/excanvas.min.js"></script>
+    <![endif]-->
+    <script src="~/theme/assets/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="~/theme/assets/plugins/jquery-cookie/jquery.cookie.js"></script>
+    
+    <script src="~/Scripts/moment-with-locales.min.js"></script> 
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.blockUI.js"></script> 
+    <script src="~/Scripts/toastr.min.js"></script> 
+    <script src="~/Scripts/sweetalert/sweet-alert.min.js"></script> 
+    <script src="~/Scripts/others/spinjs/spin.js"></script> 
+    <script src="~/Scripts/others/spinjs/jquery.spin.js"></script> 
+    <script src="~/Scripts/jquery.signalR-2.2.1.min.js"></script> 
+
+    <script src="~/Abp/Framework/scripts/abp.js"></script>  
+    <script src="~/Abp/Framework/scripts/libs/abp.jquery.js"></script>  
+    <script src="~/Abp/Framework/scripts/libs/abp.toastr.js"></script>  
+    <script src="~/Abp/Framework/scripts/libs/abp.blockUI.js"></script>  
+    <script src="~/Abp/Framework/scripts/libs/abp.spin.js"></script>  
+    <script src="~/Abp/Framework/scripts/libs/abp.sweet-alert.js"></script>  
+    
+    <!-- Dynamic scripts of ABP system (They are created on runtime and can not be bundled) -->
+    <script src="~/api/AbpServiceProxies/GetAll?v=@(Clock.Now.Ticks)"></script>
+    <script src="~/AbpScripts/GetScripts?v=@(Clock.Now.Ticks)" type="text/javascript"></script>
+
+    <!-- ================== END BASE JS ================== -->
+	
+    <!-- ================== BEGIN PAGE LEVEL JS ================== -->
+
+    <!-- SignalR scripts -->
+    <script src="~/signalr/hubs"></script>
+    <script src="~/Abp/Framework/scripts/libs/abp.signalr.js"></script>
+
+    <script src="~/theme/assets/js/apps.js"></script>
+    <script src="~/theme/assets/js/login-v2.demo.js"></script>
+    <script src="~/Views/Account/Login.js"></script>
+
+    <!-- View specific scripts -->
+    
+    <script>
+        //Localizing momentjs
+        moment.locale('@Thread.CurrentThread.CurrentUICulture.Name');
+    </script>
+    <script type="text/javascript">
+        $(function() {
+            swal.setDefaults({ confirmButtonText: "@L("OK")" });
+            App.init();
+            LoginV2.init();
+        });
+    </script>
+</body>
+</html>
+
+
+
+

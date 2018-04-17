@@ -1,0 +1,346 @@
+﻿@{
+    ViewBag.Title = "资产管理";
+    Layout = "~/Views/Shared/_Layout6.cshtml";
+    string propertyId = ViewBag.propertyId;
+}
+<!-- begin #content -->
+<div id="content" class="content" style="padding: 0; height: 100%; ">
+    <!-- begin page-header -->
+    <div id="page-header" style="height: 45px;line-height: 45px;background:  #D9E0E7;overflow: hidden;">
+        <ul class="nav nav-pills">
+            <li style="margin-left: 20px;font-size: 14px">资产管理 &nbsp; |</li>
+            <li>
+                <a href="~/PropertyMgr/Index" style="padding:0;width: 50px;text-align: center">
+                    <i class="fa fa-search"></i>
+                </a>
+            </li>
+            <li>
+                <a href="~/PropertyMgr/AddProperty"  style="padding:0;width: 50px;text-align: center;font-size: 18px;">
+                    <i class="icon iconfont icon-tianjiazulinhetong"></i>
+                </a>
+            </li>
+            <li>
+                <a href="~/PropertyMgr/RoomMgr" style="padding:0;width: 50px;text-align: center;font-size: 18px;">
+                    <i class="fa  fa-home"></i>
+                </a>
+            </li>
+            <li class="active">
+                <a href="#nav-pills-tab-4" data-toggle="tab" style="padding:0;width: 50px;text-align: center;font-size: 18px;">
+                    <i class="icon iconfont icon-tianjiafangyuanyuding"></i>
+                </a>
+            </li>
+            <li style="float: right;margin-right: 20px;">
+                <a href="~/Home/Index" style="padding:0;width: 50px;text-align: center">
+                    <i class="icon iconfont icon-fanhui" style="font-size: 20px;"></i>
+                </a>
+            </li>
+            <li style="float: right;overflow: hidden;">
+            </li>
+        </ul>
+    </div>
+    <!-- end page-header -->
+    <div class="tab-content" id="tab-content" style="height: 100%;">
+        <div class="tab-pane fade active in" id="nav-pills-tab-4">
+            <div class="row" style="margin:0;">
+                <!-- begin col-6 -->
+                <div class="col-md-12">
+                    <!-- begin panel -->
+                    <div class="panel panel-inverse" data-sortable-id="form-stuff-1" style="margin-top: 2%;">
+                        <div class="panel-body">
+                            <form class="form-horizontal " id="form-room">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label class="col-md-2 control-label col-md-offset-2">资产编号:</label>
+                                            <div class="col-md-8">
+                                                <select class="form-control" id="propertyId" name="propertyId">
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="col-md-2 control-label col-md-offset-2">房地地址：:</label>
+                                            <div class="col-md-8">
+                                                <input type="text" class="form-control" id="certificateAddress" name="certificateAddress"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label class="col-md-2 control-label col-md-offset-2">房间名称：</label>
+                                            <div class="col-md-8">
+                                                <input type="text" class="form-control" id="roomName" name="roomName"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="col-md-2 control-label col-md-offset-2">房间编号：</label>
+                                            <div class="col-md-8">
+                                                <input type="text" class="form-control" id="roomCode" name="roomCode"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label class="col-md-2 control-label col-md-offset-2">建筑面积：</label>
+                                            <div class="col-md-8">
+                                                <input type="text" class="form-control" id="buildingArea" name="buildingArea"/>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="col-md-2 control-label col-md-offset-2">使用面积：</label>
+                                            <div class="col-md-8">
+                                                <input type="text" class="form-control" id="usageArea" name="usageArea"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label class="col-md-2 control-label col-md-offset-2">租赁状态：</label>
+                                            <div class="col-md-8">
+                                                <select class="form-control" id="rentStatusCode" name="rentStatusCode">
+                                                    <option value="1">待租</option>
+                                                    <option value="2">已租</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="col-md-2 control-label col-md-offset-2">封面图片：</label>
+                                            <div class="col-md-8">
+                                                <input type="file" id="coverPhoto" name="coverPhoto" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label class="col-md-2 control-label col-md-offset-2" style="font-size: 16px;color: #9f191f;"> 相册：</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-1 control-label col-md-offset-1">上传图片：</label>
+                                    <div class="col-md-10">
+                                        <input type="file" />
+                                    </div>
+                                </div>
+                                <div class="from-group">
+                                    <label class="col-md-1 control-label col-md-offset-1"></label>
+                                    <div class="col-md-10" style="padding-left: 5px;">
+                                        <div class="image" style="width: 140px;overflow: hidden;float: left;margin-right: 10px;">
+                                            <div class="image-inner">
+                                                <a href="javascript:;" data-lightbox="gallery-group-1">
+                                                    <img src="/theme/assets/img/fujian.png" alt="" style="width: 140px;height: 180px;" />
+                                                </a>
+                                            </div>
+                                            <div class="image-info text-center">
+                                                <h5 class="title text-center">File NAME</h5>
+                                                <div class="text-center">
+                                                    <a href="javascript:;"><i class="icon iconfont icon-shanchu"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- end panel -->
+                </div>
+                <!-- end col-6 -->
+            </div>
+            <div class="row" style="width:100%;height: 60px;line-height: 60px;position: fixed;bottom: 0;background: #ffffff;">
+                <button type="submit" class="btn btn-lg btn-success" id="btnSave" style="padding: 8px 20px; margin-left: 10%;">保存</button>
+                <button type="button" class="btn btn-lg btn-default" style="padding: 8px 20px;">取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+@section Styles{
+    <style>
+        /*#page-header{*/
+        /*display: flex;*/
+        /*justify-content: space-around;*/
+        /*}*/
+        #page-header form {
+            float: left;
+        }
+
+            #page-header form select {
+                width: 98px;
+            }
+
+        .navbar-brand {
+            width: 320px;
+        }
+
+        #tankuang {
+            width: 300px;
+            position: absolute;
+            ;
+            right: 0px;
+            top: 100px;
+            overflow: auto;
+        }
+            /*滚动条样式*/
+            #tankuang::-webkit-scrollbar { /*滚动条整体样式*/
+                width: 6px; /*高宽分别对应横竖滚动条的尺寸*/
+                height: 6px;
+            }
+
+            #tankuang::-webkit-scrollbar-thumb { /*滚动条里面小方块*/
+                border-radius: 5px;
+                -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+                background: rgba(0,0,0,0.2);
+            }
+
+            #tankuang::-webkit-scrollbar-track { /*滚动条里面轨道*/
+                -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+                border-radius: 0;
+                background: rgba(0,0,0,0.1);
+            }
+
+            #tankuang .panel {
+                background: rgba(255,255,255,0.5);
+            }
+
+        .row > [class*=col-].ui-sortable {
+            min-height: 0;
+        }
+
+        #tab-content {
+            padding: 0;
+            margin: 0;
+        }
+
+        #data-table td a {
+            font-size: 18px;
+            margin-right: 20px;
+        }
+
+            #data-table td a:last-child {
+                margin-right: 0;
+            }
+
+        #data-table2 td a {
+            font-size: 18px;
+            margin-right: 20px;
+        }
+
+            #data-table2 td a:last-child {
+                margin-right: 0;
+            }
+
+        .form-horizontal .form-group {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .form-horizontal h4 {
+            color: #a94442;
+            font-size: 17px;
+            /*color: #0d6aad;*/
+        }
+
+        .nav2 li {
+            margin-top: 10px;
+        }
+
+        .bwizard-steps li.active, .bwizard-steps li.active:focus, .bwizard-steps li.active:hover {
+            background: #ff5b57 !important;
+        }
+
+        .form-control-feedback {
+            right: -26px;
+            margin-right: 10px;
+            color: #ff3245;
+        }
+
+        .control-label {
+            text-align: left !important;
+        }
+        /*#tankuang .row .panel-body{*/
+        /*background:rgba(255,255,255,0.5)!important;*/
+        /*}*/
+    </style>
+}
+
+@section scripts{
+    <script src="~/theme/assets/js/apps.min.js"></script>
+    <script src="~/js/main.js"></script>
+    <script>
+        var propertyService = abp.services.app.propertyAppServices;
+
+        function initPropertySelect() {
+            propertyService.getAllProperty().done(function(data) {
+                if (data.length > 0) {
+                    $("#propertyId").empty();
+                    var options = [];
+                    $.each(data,
+                        function(i, obj) {
+                            var option = "<option value='" + obj.id + "'>" + obj.propertyCode + "</option>";
+                            if (obj.id.toString() == "@propertyId") {
+                                option = "<option value='" + obj.id + "' selected>" + obj.propertyCode + "</option>";
+                            }
+                            options.push(option);
+                        });
+                    $("#propertyId").append(options.join(''));
+                    $("#propertyId").trigger("change");
+                }
+            });
+        }
+
+        $(document).ready(function() {
+            $("#global_search").hide();
+            App.init();
+            $('.sidebar-minify-btn').click().hide();
+            FormWizard.init();
+            //FormWizard1.init();
+            $('.well').height($('body').height() * 0.6).css("overflow", "auto");
+            $(window).resize(function() { //当浏览器大小变化时
+                $('.well').height($('body').height() * 0.5).css("overflow", "auto");
+            });
+            FormPlugins.init();
+
+            $("#propertyId").on("change",
+                function () {
+                    var propertyId = $("#propertyId").val();
+                    $("#certificateAddress").val("");
+                    var input = { id: propertyId };
+                    propertyService.getPropertyInfoByPropId(input).done(function (data) {
+                        if (data != null) {
+                            $("#certificateAddress").val(data.certificateAddress);
+                        }
+                    });
+                });
+
+            initPropertySelect();
+
+            var $roomForm = $("#form-room");
+
+            $roomForm.validate();
+
+            $("button[type=submit]").off().on("click",
+                function(e) {
+                    e.preventDefault();
+                    if (!$roomForm.valid()) {
+                        return;
+                    }
+                    var room = $roomForm.serializeFormToObject();
+                    abp.ui.setBusy($("body"));
+                    propertyService.createRoom(room).done(function() {
+                        abp.message.success('新建房间成功！', '操作成功');
+                        $("input[type=text]").val("");
+                        $("#propertyId").trigger("change");
+                    }).always(function() {
+                        abp.ui.clearBusy($("body"));
+                    });
+                });
+        });
+    </script>
+}

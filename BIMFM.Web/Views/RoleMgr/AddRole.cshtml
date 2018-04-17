@@ -1,0 +1,455 @@
+﻿@{
+    ViewBag.Title = "角色管理";
+    Layout = "~/Views/Shared/_Layout6.cshtml";
+}
+@model BIMFM.Web.Models.Users.UserListViewModel
+<!-- begin #content -->
+<div id="content" class="content" style="padding: 0; height: 100%;">
+    <!-- begin page-header -->
+    <div id="page-header" style="height: 45px;line-height: 45px;background:  #D9E0E7;overflow: hidden;">
+        <ul class="nav nav-pills">
+            <li style="margin-left: 20px;font-size: 14px">角色管理 &nbsp; |</li>
+            <li>
+                <a href="/RoleMgr/Index" style="padding:0;width: 50px;text-align: center">
+                    <i class="icon iconfont icon-biaoshilei_jiaosechaxun"></i>
+                </a>
+            </li>
+            <li class="active">
+                <a href="#nav-pills-tab-2" data-toggle="tab" style="padding:0;width: 50px;text-align: center">
+                    <i class="icon iconfont icon-add-role"></i>
+                </a>
+            </li>
+            <li style="float: right;margin-right: 20px;">
+                <a href="~/Home/Index" style="padding:0;width: 50px;text-align: center">
+                    <i class="icon iconfont icon-fanhui" style="font-size: 20px;"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- end page-header -->
+    <div class="tab-content" id="tab-content" style="height: 100%; overflow: hidden;">
+        <div class="tab-pane fade active in" id="nav-pills-tab-2">
+            <div class="row" style="margin: 0;">
+                <!-- begin col-6 -->
+                <div class="col-md-12">
+                    <!-- begin panel -->
+                    <div class="panel panel-inverse" data-sortable-id="form-stuff-1">
+                        <div class="panel-body">
+                            <form class="form-horizontal" style="margin-left: 60px;" id="form-role">
+                            <div class="row" style="margin-bottom: 60px;height: 40px;line-height: 40px;">
+                                <label class="col-md-1 control-label text-left">角色名称:</label>
+                                <div class="col-md-2 text-left">
+                                    <input type="text" class="form-control" id="rolename" name="Name" />
+                                </div>
+                            </div>
+                            <div class="row" style="margin-bottom: 60px;height: 40px;line-height: 40px;">
+                                <label class="col-md-1 control-label text-left">显示名称:</label>
+                                <div class="col-md-2 text-left">
+                                    <input type="text" class="form-control" id="displayname" name="DisplayName" />
+                                </div>
+                            </div>
+                            <h4>后台管理设置：</h4>
+                            <div class="col-sm-12" style="display: none;">
+                                <input type="checkbox" name="permission" value="Pages" class="filled-in" id="@string.Format("permission{0}","Pages")" checked="checked" />
+                                <label for="@string.Format("permission{0}","Pages")">Pages</label>
+                            </div>
+                                <div class="form-group">
+                                    <div class="col-md-3 text-center">
+                                        <label class="control-label">
+                                            <input style="display: none;" type="checkbox" name="permission" value="Pages.UserMgr" class="filled-in" id="@string.Format("permission{0}","Pages.UserMgr")" >
+                                            用户管理:
+                                        </label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="permission" value="Pages.UserMgr.Query" data-permission-type="sub" data-parent-permission="Pages.UserMgr" class="filled-in" id="@string.Format("permission{0}","Pages.UserMgr.Query")" >
+                                            用户查询
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="permission" value="Pages.UserMgr.AddUser" data-permission-type="sub" data-parent-permission="Pages.UserMgr" class="filled-in" id="@string.Format("permission{0}", "Pages.UserMgr.AddUser")" >
+                                            新增用户
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-3 text-center">
+                                        <label class="control-label">
+                                            <input style="display: none;" type="checkbox" name="permission" value="Pages.PropertyMgr" class="filled-in" id="@string.Format("permission{0}","Pages.PropertyMgr")">
+                                            资产管理：
+                                        </label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="permission" value="Pages.PropertyMgr.Query" data-permission-type="sub" data-parent-permission="Pages.PropertyMgr" class="filled-in" id="@string.Format("permission{0}", "Pages.PropertyMgr.Query")" >
+                                            资产查询
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="permission" value="Pages.PropertyMgr.AddProperty" data-permission-type="sub" data-parent-permission="Pages.PropertyMgr" class="filled-in" id="@string.Format("permission{0}", "Pages.PropertyMgr.AddProperty")" >
+                                            新增资产
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="permission" value="Pages.PropertyMgr.RoomQuery" data-permission-type="sub" data-parent-permission="Pages.PropertyMgr" class="filled-in" id="@string.Format("permission{0}", "Pages.PropertyMgr.RoomQuery")" >
+                                            房间查询
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="permission" value="Pages.PropertyMgr.AddRoom" data-permission-type="sub" data-parent-permission="Pages.PropertyMgr" class="filled-in" id="@string.Format("permission{0}", "Pages.PropertyMgr.AddRoom")" >
+                                            新增房间
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-3 text-center">
+                                        <label class="control-label">
+                                            <input style="display: none;" type="checkbox" name="permission" value="Pages.RentMgr" class="filled-in" id="@string.Format("permission{0}","Pages.RentMgr")">
+                                            租赁管理：
+                                        </label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="permission" value="Pages.RentMgr.Query" data-permission-type="sub" data-parent-permission="Pages.RentMgr" class="filled-in" id="@string.Format("permission{0}", "Pages.RentMgr.Query")" >
+                                            租赁查询
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="permission" value="Pages.RentMgr.AddRent" data-permission-type="sub" data-parent-permission="Pages.RentMgr" class="filled-in" id="@string.Format("permission{0}", "Pages.RentMgr.AddRent")" >
+                                            新增租赁
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="permission" value="Pages.RentMgr.EarlyWarning" data-permission-type="sub" data-parent-permission="Pages.RentMgr" class="filled-in" id="@string.Format("permission{0}", "Pages.RentMgr.EarlyWarning")" >
+                                            预警设置
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-3 text-center">
+                                        <label class="control-label">
+                                            <input style="display: none;" type="checkbox" name="permission" value="Pages.RoleMgr" class="filled-in" id="@string.Format("permission{0}","Pages.RoleMgr")">
+                                            角色管理：
+                                        </label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="permission" value="Pages.RoleMgr.Query" data-permission-type="sub" data-parent-permission="Pages.RoleMgr" class="filled-in" id="@string.Format("permission{0}", "Pages.RoleMgr.Query")" >
+                                            角色查询
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="permission" value="Pages.RoleMgr.AddRole" data-permission-type="sub" data-parent-permission="Pages.RoleMgr" class="filled-in" id="@string.Format("permission{0}", "Pages.RoleMgr.AddRole")" >
+                                            新增角色
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-3 text-center">
+                                        <label class="control-label">
+                                            财务统计：
+                                        </label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <label class="checkbox-inline">
+                                            <input  type="checkbox" name="permission" value="Pages.FinancialStatistics" class="filled-in" id="@string.Format("permission{0}","Pages.FinancialStatistics")">
+                                            财务统计查询
+                                        </label>
+                                    </div>
+                                </div>
+                                <h4>数据限制设置：</h4>
+                                <div class="form-group">
+                                    <div class="col-md-3 text-center">
+                                        <label class="control-label">
+                                            <input type="checkbox" value="">
+                                            后台设置：
+                                        </label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <label class=" control-label" style="margin-right: 20px;">管理单位</label>
+                                        <select class="form-control" style="width: 100px;display: inline-block;margin-right: 20px;">
+                                            <option>不限</option>
+                                            <option>XXX公司</option>
+                                            <option>AAA公司</option>
+                                            <option>BBB单位</option>
+                                        </select>
+                                        <label class=" control-label" style="margin-right: 20px;">所在城区</label>
+                                        <select class="form-control" style="width: 100px;display: inline-block;margin-right: 20px;">
+                                            <option>不限</option>
+                                            <option>上海市</option>
+                                            <option>&nbsp;&nbsp;&nbsp; 徐汇区</option>
+                                            <option>&nbsp;&nbsp;&nbsp; 静安区</option>
+                                            <option>&nbsp;&nbsp;&nbsp; 普陀区</option>
+                                            <option>南京市</option>
+                                        </select>
+                                        <label class=" control-label" style="margin-right: 20px;">资产编号</label>
+                                        <select class="form-control" style="width: 100px;display: inline-block;margin-right: 20px;">
+                                            <option>不限</option>
+                                            <option>SHXH0050011</option>
+                                            <option>NJ000030041</option>
+                                            <option>SHJA0030011</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-3 text-center">
+                                        <label class="control-label">
+                                            <input type="checkbox" value="">
+                                            APP设置：
+                                        </label>
+                                    </div>
+                                    <div class="col-md-9">
+                                        <label class=" control-label" style="margin-right: 20px;">管理单位</label>
+                                        <select class="form-control" style="width: 100px;display: inline-block;margin-right: 20px;">
+                                            <option>不限</option>
+                                            <option>XXX公司</option>
+                                            <option>AAA公司</option>
+                                            <option>BBB单位</option>
+                                        </select>
+                                        <label class=" control-label" style="margin-right: 20px;">所在城区</label>
+                                        <select class="form-control" style="width: 100px;display: inline-block;margin-right: 20px;">
+                                            <option>不限</option>
+                                            <option>上海市</option>
+                                            <option>&nbsp;&nbsp;&nbsp; 徐汇区</option>
+                                            <option>&nbsp;&nbsp;&nbsp; 静安区</option>
+                                            <option>&nbsp;&nbsp;&nbsp; 普陀区</option>
+                                            <option>南京市</option>
+                                        </select>
+                                        <label class=" control-label" style="margin-right: 20px;">资产编号</label>
+                                        <select class="form-control" style="width: 100px;display: inline-block;margin-right: 20px;">
+                                            <option>不限</option>
+                                            <option>SHXH0050011</option>
+                                            <option>NJ000030041</option>
+                                            <option>SHJA0030011</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <h4>展示窗口设置：</h4>
+                                <div class="form-group">
+                                    <div class="col-md-3 text-center">
+
+                                    </div>
+                                    <div class="col-md-9">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="permission" value="Pages.Window.Warning" class="filled-in" id="@string.Format("permission{0}","Pages.Window.Warning")">
+                                            紧急预警窗口
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="permission" value="Pages.Window.Task" class="filled-in" id="@string.Format("permission{0}","Pages.Window.Task")">
+                                            任务提示窗口
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="permission" value="Pages.Window.Financial" class="filled-in" id="@string.Format("permission{0}","Pages.Window.Financial")">
+                                            财务信息窗口
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="permission" value="Pages.Window.Property" class="filled-in" id="@string.Format("permission{0}","Pages.Window.Property")">
+                                            资产信息窗口
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="permission" value="Pages.Window.Rent" class="filled-in" id="@string.Format("permission{0}","Pages.Window.Rent")">
+                                            租赁信息窗口
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" name="permission" value="Pages.Window.DataCenter" class="filled-in" id="@string.Format("permission{0}", "Pages.Window.DataCenter")">
+                                            数据分析中心
+                                        </label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="row" style="width:100%;height: 60px;line-height: 60px;position: fixed;bottom: 0;background: #ffffff;">
+                            <button type="submit" class="btn btn-lg btn-success" style="padding: 8px 20px; margin-left: 10%;margin-right: 20px;">保存</button>
+                            <button type="button" class="btn btn-lg btn-default" style="padding: 8px 20px;">取消</button>
+                        </div>
+                    </div>
+                    <!-- end panel -->
+                </div>
+                <!-- end col-6 -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- #编辑弹框 -->
+
+@section Styles{
+    <style>
+        /*#page-header{*/
+        /*display: flex;*/
+        /*justify-content: space-around;*/
+        /*}*/
+        #page-header form {
+            float: left;
+        }
+
+            #page-header form select {
+                width: 98px;
+            }
+
+        .navbar-brand {
+            width: 320px;
+        }
+
+        #tankuang {
+            width: 300px;
+            position: absolute;
+            ;
+            right: 0px;
+            top: 100px;
+            overflow: auto;
+        }
+            /*滚动条样式*/
+            #tankuang::-webkit-scrollbar { /*滚动条整体样式*/
+                width: 6px; /*高宽分别对应横竖滚动条的尺寸*/
+                height: 6px;
+            }
+
+            #tankuang::-webkit-scrollbar-thumb { /*滚动条里面小方块*/
+                border-radius: 5px;
+                -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+                background: rgba(0,0,0,0.2);
+            }
+
+            #tankuang::-webkit-scrollbar-track { /*滚动条里面轨道*/
+                -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+                border-radius: 0;
+                background: rgba(0,0,0,0.1);
+            }
+
+            #tankuang .panel {
+                background: rgba(255,255,255,0.5);
+            }
+
+        .row > [class*=col-].ui-sortable {
+            min-height: 0;
+        }
+
+        #tab-content {
+            padding: 0;
+            margin: 0;
+        }
+
+        #data-table td a {
+            font-size: 18px;
+            margin-right: 20px;
+        }
+
+            #data-table td a:last-child {
+                margin-right: 0;
+            }
+
+        #data-table2 td a {
+            font-size: 18px;
+            margin-right: 20px;
+        }
+
+            #data-table2 td a:last-child {
+                margin-right: 0;
+            }
+
+        .form-horizontal .form-group {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .form-horizontal h4 {
+            color: #a94442;
+            font-size: 17px;
+            /*color: #0d6aad;*/
+        }
+
+        .nav2 li {
+            margin-top: 10px;
+        }
+
+        .bwizard-steps li.active, .bwizard-steps li.active:focus, .bwizard-steps li.active:hover {
+            background: #ff5b57 !important;
+        }
+
+        .form-control-feedback {
+            right: -26px;
+            margin-right: 10px;
+            color: #ff3245;
+        }
+
+        .control-label {
+            text-align: left !important;
+        }
+        /*#tankuang .row .panel-body{*/
+        /*background:rgba(255,255,255,0.5)!important;*/
+        /*}*/
+    </style>
+}
+
+@section scripts{
+    <script src="~/theme/assets/js/apps.min.js"></script>
+    <script src="~/Scripts/underscore-min.js"></script>
+    <script src="~/js/main.js"></script>
+    <script>
+        var roleService = abp.services.app.roleV1;
+        $(document).ready(function() {
+            $("#global_search").hide();
+            App.init();
+            $('.sidebar-minify-btn').click().hide();
+            FormWizard.init();
+            //FormWizard1.init();
+            $('.well').height($('body').height() * 0.6).css("overflow", "auto");
+            $(window).resize(function() { //当浏览器大小变化时
+                $('.well').height($('body').height() * 0.5).css("overflow", "auto");
+            });
+            FormPlugins.init();
+
+            $("input[data-permission-type='sub']").change(function () {
+
+                var parentPermission = $(this).attr("data-parent-permission");
+
+                if ($(this).is(':checked')) {
+
+                    $("input[value='" + parentPermission + "']").prop("checked", true);
+                } else {
+
+
+                    var hasSubChecked = false;
+                    $("input[data-parent-permission='" + parentPermission + "']")
+                        .each(function (idx, item) {
+                            if ($(item).is(':checked')) {
+                                hasSubChecked = true;
+                            }
+                        });
+
+                    if (hasSubChecked) {
+                        $("input[value='" + parentPermission + "']").prop("checked", true);
+                    } else {
+                        $("input[value='" + parentPermission + "']").attr('checked', false);
+                    }
+                }
+            });
+
+            var $form = $("#form-role");
+
+            $form.validate();
+
+            $("button[type=submit]").off().on("click",
+                function(e) {
+                    e.preventDefault();
+
+                    if (!$form.valid()) {
+                        return;
+                    }
+
+                    var role = $form.serializeFormToObject(); //serializeFormToObject is defined in main.js
+                    role.permissions = [];
+                    var $permissionCheckboxes = $("input[name='permission']:checked");//:visible
+                    if ($permissionCheckboxes) {
+                        for (var permissionIndex = 0; permissionIndex < $permissionCheckboxes.length; permissionIndex++) {
+                            var $permissionCheckbox = $($permissionCheckboxes[permissionIndex]);
+                            var obj = new Object();
+                            obj.name = $permissionCheckbox.val();
+                            role.permissions.push(obj);
+                        }
+                    }
+
+                    abp.ui.setBusy($("body"));
+                    roleService.create(role).done(function () {
+                        abp.message.success('新建角色成功！', '操作成功');
+                        $("input[type=text]").val("");
+                    }).always(function() {
+                        abp.ui.clearBusy($("body"));
+                    });
+                });
+        });
+    </script>
+}

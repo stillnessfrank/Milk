@@ -1,0 +1,587 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<localizationDictionary culture="zh-CN">
+  <texts>
+    <text name="LogoTitle" value="管理平台" />
+
+    <text name="FormIsNotValidMessage" value="部分输入信息不符合要求，请检查并改正.." />
+    <text name="TenantNameCanNotBeEmpty" value="租户名不能为空" />
+
+    <text name="InvalidUserNameOrPassword" value="用户名或密码无效" />
+    <text name="ThereIsNoTenantDefinedWithName{0}" value="租户 {0}不存在" />
+    <text name="TenantIsNotActive" value="租户 {0} 未激活." />
+    <text name="UserIsNotActiveAndCanNotLogin" value="用户 {0} 未激活，不能登录." />
+    <text name="PleaseEnterLoginInformation" value="请输入登录信息" />
+    <text name="TenancyName" value="租户名称" />
+    <text name="UserNameOrEmail" value="用户名或邮箱地址" />
+    <text name="Password" value="密码" />
+    <text name="RememberMe" value="记住我" />
+    <text name="Register" value="注册" />
+    <text name="CanBeEmptyToLoginAsHost" value="可以不填作为本地登录" />
+    <text name="LogIn" value="登录" />
+    <text name="LoginFailed" value="登录失败!" />
+    <text name="Logout" value="退出" />
+    <text name="Changepwd" value="修改密码" />
+    <text name="InvalidUserName" value="用户名错误，请重试！" />
+    <text name="InvalidPassword" value="密码错误，请重试！" />
+    <text name="Pleaseenterusername" value="请输入用户名" />
+    <text name="Pleaseenterpassword" value="请输入密码" />
+
+    <text name="Users" value="用户" />
+    <text name="CreateNewUser" value="创建新用户" />
+    <text name="UserName" value="用户名" />
+    <text name="IsActive" value="是否活动" />
+    <text name="Yes" value="是" />
+    <text name="No" value="否" />
+    <text name="EmailAddress" value="邮箱地址" />
+    <text name="Surname" value="姓" />
+    <text name="Name" value="名称" />
+    <text name="FullName" value="全名" />
+    <text name="OK" value="确认" />
+    <text name="Cancel" value="取消" />
+    <text name="Save" value="保存" />
+
+
+    <text name="SpaceManagement" value="空间管理" />
+    <text name="Country" value="国家" />
+    <text name="Region" value="区域" />
+    <text name="Province" value="省市" />
+    <text name="City" value="城市" />
+    <text name="Location" value="地理位置" />
+    <text name="Building" value="大厦" />
+    <text name="Floor" value="楼层" />
+    <text name="Room" value="房间" />
+    <text name="SpaceType" value="空间分类" />
+    <text name="SpaceInfo" value="空间信息" />
+    <text name="Company" value="公司" />
+    <text name="Department" value="部门" />
+    <text name="Organizational" value="组织结构" />
+    <text name="Tenant" value="租户" />
+    <text name="TenantContract" value="租户合同" />
+    <text name="TenantContractRelationship" value="租户合同关系" />
+    <text name="Utility" value="水电煤" />
+    <text name="SpaceArrangement" value="空间分配" />
+    <text name="SpaceStatistics" value="空间统计" />
+    <text name="SpaceManagementCenter" value="空间管理中心" />
+    <text name="AssetManagement" value="资产管理" />
+    <text name="AssetList" value="资产清册" />
+    <text name="AssetLocation" value="资产定位" />
+    <text name="AssetStatistics" value="资产统计" />
+    <text name="AssetProperty" value="资产属性" />
+    <text name="QRCodeManagement" value="条码/二维码管理" />
+    <text name="OperationManagement" value="运维管理" />
+    <text name="Profession" value="工种" />
+    <text name="Engineer" value="技工" />
+    <text name="Spare" value="备件" />
+    <text name="MaintenanceType" value="问题类型" />
+    <text name="SLAManagement" value="管理SLA" />
+    <text name="MyMaintenanceMission" value="我的维护任务" />
+    <text name="RequiredMaintenance" value="应需维护" />
+    <text name="Defineprogram" value="定义程序" />
+    <text name="ScheduledMaintenance" value="定期维护" />
+    <text name="SystemSettings" value="系统设置" />
+    <text name="CustomList" value="自定义列表" />
+    <text name="CustomProperty" value="自定义属性" />
+    <text name="ListData" value="列表数据" />
+    <text name="CreateNewCustomTbl" value="创建自定义列表" />
+    <text name="Can_create_customtbls" value="创建自定义列表" />
+    <text name="Can_edit_customtbls" value="编辑自定义列表" />
+    <text name="Can_delete_customtbls" value="删除自定义列表" />
+    <text name="Operation" value="操作" />
+    <text name="Edit" value="编辑" />
+    <text name="Delete" value="删除" />
+    <text name="Required" value="必填"/>
+    <text name="SeeProperty" value="查看属性" />
+    <text name="SettingProperty" value="属性设置" />
+    <text name="Can_create_customflds" value="创建自定义属性" />
+    <text name="Can_create_customflds2" value="创建物资属性" />
+    <text name="Can_edit_customflds" value="编辑自定义属性" />
+    <text name="Can_edit_customflds2" value="编辑自定义属性" />
+    <text name="Can_delete_customflds" value="删除自定义属性" />
+    <text name="Type" value="类型" />
+    <text name="Type1" value="文本" />
+    <text name="Type2" value="选项" />
+    <text name="Type3" value="查阅项" />
+    <text name="Type4" value="数字" />
+    <text name="Type5" value="日期" />
+    <text name="Description" value="描述" />
+    <text name="IsRequired" value="是否必填" />
+    <text name="IsOnly" value="是否强制唯一值" />
+    <text name="IsInherit" value="是否继承" />
+    <text name="AddItem" value="添加" />
+    <text name="EditItem" value="编辑" />
+    <text name="SeeValue" value="查看数据列表" />
+    <text name="Processing" value="处理中..." />
+    <text name="LengthMenu" value="显示 _MENU_ 项结果" />
+    <text name="ZeroRecords" value="没有匹配结果" />
+    <text name="Info" value="显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项" />
+    <text name="InfoEmpty" value="显示第 0 至 0 项结果，共 0 项" />
+    <text name="InfoFiltered" value="(由 _MAX_ 项结果过滤)" />
+    <text name="Search" value="搜索" />
+    <text name="EmptyTable" value="表中数据为空" />
+    <text name="Nodata" value="暂无数据" />
+    <text name="LoadingRecords" value="载入中..." />
+    <text name="First" value="首页" />
+    <text name="Previous" value="上页" />
+    <text name="Next" value="下页" />
+    <text name="Last" value="末页" />
+    <text name="SortAscending" value="以升序排列此列" />
+    <text name="SortDescending" value="以降序排列此列" />
+    <text name="Color" value="颜色" />
+    <text name="Number" value="编号" />
+    <text name="Roomcode" value="房间编号" />
+    <text name="Roomname" value="房间名称" />
+    <text name="Assignmenttype" value="分配类型" />
+    <text name="Roomproperty" value="房间所属" />
+    <text name="Endtime" value="截止时间" />
+    <text name="Deadline" value="截止时间" />
+    <text name="Space" value="空间"></text>
+    <text name="Bsinfo" value="大厦基本信息"></text>
+    <text name="Roomassignments" value="分配房间"></text>
+    <text name="Contract" value="租赁合同"></text>
+    <text name="Contractinformation" value="租赁合同信息"></text>
+    <text name="nothing" value="无"></text>
+    <text name="Rbinfo" value="房间基本信息"></text>
+    <text name="Departmentname" value="部门名称"></text>
+    <text name="Assetspecificationcode" value="资产规格编号"></text>
+    <text name="Assetspecificationname" value="资产规格名称"></text>
+    <text name="Assetcode" value="资产编号"></text>
+    <text name="Assetname" value="资产名称"></text>
+    <text name="Home" value="首页" />
+    <text name="checksuffxpdf" value="只能上传pdf格式的附件"></text>
+    <text name="checkPicSizepdf" value="请上传大小在100M以内的pdf文件"></text>
+    <text name="Addchild" value="新增子级"></text>
+    <text name="Addthe" value="新增同级"></text>
+    <text name="Viewmaterialspec" value="查看资产规格"></text>
+    <text name="alertroom" value="请选择数据"></text>
+    <text name="Viewlistdata" value="查看列表数据"></text>
+    <text name="Confirmdelete" value="确认删除吗"></text>
+    <text name="Upload" value="上传"></text>
+    <text name="Creator" value="创建者"></text>
+    <text name="Creatematerialspec" value="创建资产规格"></text>
+    <text name="printQRcode" value="打印二维码"></text>
+    <text name="MaintenanceOrder" value="维护工单"></text>
+    <text name="Materialbasicinformation" value="物资基本信息"></text>
+    <text name="documents" value="相关文档"></text>
+    <text name="Addbuilding" value="新建大厦"></text>
+    <text name="Addfloor" value="新建楼层"></text>
+    <text name="Addroom" value="新建房间"></text>
+    <text name="Editbuilding" value="编辑大厦"></text>
+    <text name="Editfloor" value="编辑楼层"></text>
+    <text name="Editromm" value="编辑房间"></text>
+    <text name="Addmaterial" value="新增资产"></text>
+    <text name="winds" value="流量"></text>
+    <text name="temperature" value="温度"></text>
+
+    <!-- operation manage start -->
+    <text name="Tbl_No" value="序号"/>
+    <text name="Tbl_RequestContent" value="应需请求内容"/>
+    <text name="Tbl_Priority" value="优先级"/>
+    <text name="Tbl_CreationTime" value="创建时间"/>
+    <text name="Tbl_Status" value="状态"/>
+    <text name="Tbl_Action" value="操作"/>
+    <text name="emergent" value="紧急"/>
+    <text name="normal" value="常规"/>
+    <text name="Finish" value="已完成"/>
+    <text name="Created" value="进行中"/>
+    <text name="Canceled" value="已取消"/>
+    <text name="Rejected" value="已驳回"/>
+    <text name="NewRequest" value="创建新的应需请求"/>
+    <text name="SureToCancel" value="是否要取消这条请求?"/>
+    <text name="Read" value="查看"/>
+    <text name="Fld_Content" value="内容"/>
+    <text name="Fld_Eqp" value="设备"/>
+    <text name="Fld_Problem" value="问题"/>
+    <text name="Fld_Description" value="描述"/>
+    <text name="Fld_Priority" value="优先级"/>
+    <text name="Fld_Applicant" value="报修人"/>
+    <text name="Fld_Tel" value="报修人电话"/>
+    <text name="Approve" value="审批"/>
+    <text name="todo" value="待处理"/>
+    <text name="done" value="已处理"/>
+    <text name="Tbl_Task" value="工作任务"/>
+    <text name="CreateWorkOrder" value="准备备件"/>
+    <text name="CreateWorkRequest" value="分配技工"/>
+    <text name="WorkWithWorkOrder" value="完成工作"/>
+    <text name="Worker" value="技工"/>
+    <text name="WorkerName" value="技工姓名"/>
+    <text name="SpareParts" value="备件"/>
+    <text name="WfHistory" value="流转历史"/>
+    <text name="Accept" value="同意"/>
+    <text name="Reject" value="驳回"/>
+    <text name="Transmit" value="转发"/>
+    <text name="SelectedSpareParts" value="已选备件"/>
+    <text name="Start" value="开始"/>
+    <text name="End" value="结束"/>
+    <text name="Amount" value="数量"/>
+    <text name="accept" value="同意"/>
+    <text name="reject" value="驳回"/>
+    <text name="ask" value="征求意见"/>
+    <text name="proxy" value="代为办理"/>
+    <text name="AssignPerson" value="分配人员"/>
+    <text name="ActionTime" value="操作时间"/>
+    <text name="ApproveContent" value="审批意见"/>
+    <text name="WfChart" value="流程图"/>
+    <text name="s_complete" value="完成"/>
+    <text name="s_wait" value="处理中"/>
+    <text name="s_no" value="未到达"/>
+    <text name="WorkerType" value="工种"/>
+    <text name="TransmitType" value="转发类型"/>
+    <text name="UserList" value="用户列表"/>
+    <text name="AddProgram" value="新增程序"></text>
+    <text name="AddSteps" value="新增步骤"></text>
+    <text name="AddJobs" value="新增工种"></text>
+    <text name="AddSpare" value="新增备件"></text>
+    <text name="AddToolType" value="新增工具类型"></text>
+    <text name="EditProgram" value="编辑程序"></text>
+    <text name="EditSteps" value="编辑步骤"></text>
+    <text name="EditJobs" value="编辑工种"></text>
+    <text name="EditSpare" value="编辑备件"></text>
+    <text name="EditToolType" value="编辑工具类型"></text>
+    <!-- operation manage end -->
+    <text name="SystemConfiguration" value="系统配置"></text>
+    <text name="ServiceDispatchTxt" value="服务调度"></text>
+    <text name="SecurityMgr" value="安防管理"></text>
+    <text name="CCTV" value="视频监控"></text>
+    <text name="EnergyMgr" value="能耗管理"></text>
+    <text name="PowerMgr" value="用电量管理"></text>
+    <text name="DoorAccess" value="门禁管理"></text>
+    <text name="Materialdatainformation" value="设备运行数据"></text>
+    <text name="DateTime" value="时间"></text>
+    <text name="DeviceName" value="设备名称"></text>
+    <text name="MessageDesc" value="门禁事件"></text>
+    <text name="IsAlarm" value="是否警报"></text>
+    <text name="CardId" value="门禁卡ID"></text>
+    <text name="CardName" value="门禁卡持有人姓名"></text>
+    <text name="DBPowerInformation" value="电柜读数信息"></text>
+
+    <text name="UserMgr" value="用户管理"></text>
+    <text name="RoleMgr" value="角色管理"></text>
+    
+    <text name="UserFullName" value="用户全名"></text>
+    <text name="UserEmail" value="用户邮箱"></text>
+    <text name="Action" value="操作"></text>
+    <text name="EditUser" value="编辑用户"></text>
+    <text name="EditRole" value="编辑角色"></text>
+    <text name="NewRole" value="新建角色"></text>
+    <text name="RoleName" value="角色名称"></text>
+    <text name="DisplayName" value="显示名称"></text>
+    <text name="ConfirmPassword" value="确认密码"></text>
+    <text name="Add" value="新增"></text>
+
+    <text name="Version" value="版本"></text>
+    <text name="ContingencyPlan" value="应急预案"></text>
+    <text name="EmergencyMgr" value="应急管理"></text>
+
+    <text name="TypeofSpace" value="空间分类统计"></text>
+    <text name="NumberofRoomsperBuilding" value="各单体房间所属的数量"></text>
+    <text name="FacilityAlert" value="设备报警"></text>
+    <text name="PercentageofSpaceOccupied" value="各房间所属占整个房间的比例"></text>
+    <text name="ScheduledMaintenanceWorkOrders" value="定期维护工单"></text>
+    <text name="EnergyAnalysis" value="能耗分析"></text>
+    <text name="Floor Code" value="房间编码"></text>
+    <text name="Building Code" value="楼宇编码"></text>
+    <text name="Space Model" value="空间模型"></text>
+    <text name="Asset Model" value="资产模型"></text>
+    <text name="Floor Name" value="楼层模型"></text>
+    <text name="Gross Floor Area" value="建筑面积"></text>
+    <text name="Comment" value="说明"></text>
+    <text name="Tenant Type" value="租户类型"></text>
+    <text name="Dispay Color" value="显示颜色"></text>
+    <text name="Contract Name" value="联系人姓名"></text>
+    
+    <text name="Start Date" value="开始日期"></text>
+    <text name="End Date" value="结束日期"></text>
+    <text name="Rental" value="租金"></text>
+    <text name="Method of Payment" value="支付方式"></text>
+    <text name="Property Management Fee" value="物业管理费"></text>
+
+    <text name="Postal Code" value="邮编"></text>
+    <text name="Address" value="地址"></text>
+    <text name="Total Floor Area" value="总建筑面积"></text>
+    
+    <text name="编号" value="编号"></text>
+    <text name="所属房间" value="所属房间"></text>
+    <text name="所属规格" value="所属规格"></text>
+    <text name="AddComplaint" value="添加投诉"></text>
+    <text name="Inbox" value="投诉信箱"></text>
+    <text name="WorkOrderList" value="工单列表"></text>
+    <text name="ReportedBy" value="投诉人"></text>
+  
+    
+    <text name="WorkOrderPriority" value="工单等级"></text>
+    <text name="WorkOrderStatus" value="工单状态"></text>
+    <text name="All" value="全部"></text>
+    <text name="Priority1" value="一级"></text>
+    <text name="Priority2" value="二级"></text>
+    <text name="Priority3" value="三级"></text>
+    
+    <text name="PendingReview" value="待审核"></text>
+    <text name="Completed" value="已完成"></text>
+    <text name="Pending" value="未完成"></text>
+  
+    <text name="Accumulated Energy （Wh_Im）" value="储能"></text>
+    <text name="Total Active Power （Ptot）" value="总功率"></text>
+    <text name="City/Zone" value="城市"></text>
+    <text name="WorkType" value="工种名称"></text>
+    <text name="SparePartType" value="备件零件类型"></text>
+    <text name="Title" value="标题"></text>
+    <text name="CCTVName" value="视频监控名称"></text>
+    <text name="CCTVEQPCode" value="监控设备编号"></text>
+    <text name="CCTVIP" value="监控IP地址"></text>
+    <text name="CCTVUserName" value="视频监控用户名"></text>
+    <text name="CCTVPassword" value="视频监控密码"></text>
+    <text name="CCTVFloor" value="视频监控楼层"></text>
+    <text name="Label" value="标签"></text>
+    <text name="Area Description" value="区域说明"></text>
+    <text name="EqpCode" value="设备编号"></text>
+    <text name="DistributionBoardName" value="配电板名称"></text>
+    <text name="Staff" value="添加人员"></text>
+    <text name="ComplaintDetails" value="问题详细"></text>
+    <text name="ContactInformation" value="联系方式"></text>
+    <text name="ReportingDate" value="问题时间"></text>
+    <text name="Image" value="图片信息"></text>
+    <text name="Create" value="创建工单"></text>
+    <text name="Resolved" value="直接处理"></text>
+    <text name="Username" value="用户名"></text>
+    
+    <text name="DetailsofWorkOrder" value="工单详情"></text>
+    <text name="SerialNo." value="工单编号"></text>
+    <text name="Datecreated" value="创建时间"></text>
+    <text name="PriorityLevel" value="工单等级"></text>
+    <text name="Technician" value="维修人员"></text>
+    <text name="Supervisor" value="管理人员"></text>
+    <text name="Before" value="维修人员处理前"></text>
+    <text name="After" value="维修人员处理后"></text>
+    <text name="Remarks" value="问题备注"></text>
+    <text name="WorkProgress" value="工单进度"></text>
+    <text name="用户投诉" value="用户投诉"></text>
+    <text name="调度已经将投诉分发至相应的管理人员以及维修人员；" value="调度已经将投诉分发至相应的管理人员以及维修人员；"></text>
+    <text name="调度已经将投诉分发至相应的维修人员；" value="调度已经将投诉分发至相应的维修人员；"></text>
+    <text name="管理人员已经查看投诉信息，正与维修人员沟通。" value="管理人员已经查看投诉信息，正与维修人员沟通。"></text>
+    <text name="维修人员已经完成维修，待管理人员确认。" value=" 维修人员已经完成维修，待管理人员确认。"></text>
+    <text name="维修人员已经查看投诉，并拍照取证，前往维修。" value="维修人员已经查看投诉，并拍照取证，前往维修。"></text>
+    <text name="管理员已经确认维修完成。" value="管理员已经确认维修完成。"></text>
+    <text name="调度人员已经确认维修完成。" value="调度人员已经确认维修完成。"></text>
+    <text name="维修人员已经完成维修，待调度人员确认。" value="维修人员已经完成维修，待调度人员确认。"></text>
+    <text name="WebRoles" value="Web角色" />
+    <text name="MobileRoles" value="Mobile角色" />
+    <text name="LocationName" value="设备地址" />
+    <text name="Manager" value="管理员" />
+    <text name="AddComplaintqstion" value="添加问题" />
+    <text name="From" value="业主姓名" />
+    <text name="Addressfamliy" value="家庭住址" />
+    <text name="DescriptionandLocationofComplaint" value="描述(问题描述，发生地点)" />
+    <text name="LoadImage" value="上传照片" />
+     <text name="PleaseinputthereasonfornotcreatingWorkOrder. " value="请输入无工单理由" />
+    <text name="Pleasechooseatechnician" value="请选择处理问题的人员" />
+    <text name="Areyousureyouwanttoclosethisworkorder?" value="确认关闭工作单?" />
+    <text name="Problemdescription" value="问题描述" />
+    <text name="Selectpersonnel" value="选择人员" />
+    <text name="Pleaseselectlevel" value=" 请选择等级" />
+    <text name="Pleaseselecttype" value=" 请选择类型" />
+    <text name="Sendout" value=" 发送" />
+    <text name="Noworkorderreason" value=" 无工单原因" />
+    <text name="Feedbackuserinformation" value=" 反馈用户信息" />
+    <text name="Problemprocessingallocation" value="问题处理分配" />
+    <text name="Problemofcommunication" value="问题沟通" />
+    <text name="Closetheworkorder" value="关闭工单" />
+    <text name="Complaintsoftime" value="投诉时间" />
+    <text name="Completiontime" value="完成时间" />
+    <text name="Equipmentnumber" value="设备编号" />
+    <text name="Pleaseenter" value="请输入" />
+    <text name="检修中" value="检修中" />
+    <text name="已完成" value="已完成" />
+    <text name="待审核" value="待审核" />
+    <text name="Send" value="发送" />
+    <text name="Pleaseentertheusername" value="请输入用户名" />
+    <text name="Pleaseenteruserloginpassword" value="请输入用户登录密码" />
+    <text name="PleaseentertheusernameOne" value="请输入用户姓名" />
+    <text name="Pleaseselectuserroles" value="请选择用户角色" />
+
+    <text name="Savesuccess" value="保存成功" />
+    <text name="Savefailed" value="保存失败" />
+    <text name="Pleaseselecttheproblemtobedealtwith" value="请选择要处理的问题." />
+    <text name="Failedtosave.Pleasetryagain." value="保存失败.请重试." />
+    <text name="Closethesuccess" value="关闭成功." />
+    <text name="Pleaseselectthequestionfirst" value="请先选择问题." />
+    <text name="Pleaseinputuserfeedback" value="请输入用户反馈信息." />
+    <text name="Sendasuccess" value="发送成功." />
+    <text name="Pleaseselectthelevelofworkfirst" value="请先选择工单等级." />
+    <text name="Pleaseselecttheproblemtypefirst" value="请先选择问题类型." />
+
+    <text name="Optionforeachbranch" value="分行键入每个选项" />
+    <text name="InputChoice1" value="输入选项 1" />
+    <text name="InputChoice2" value="输入选项 2" />
+    <text name="InputChoice3" value="输入选项 3" />
+    <text name="Source" value="信息来源" />
+    <text name="Consistsof" value="此栏包含" />
+
+    <text name="Addnewspacetype" value="新增空间分类" />
+    <text name="Pleaseinsertname" value="请输入名称" />
+    <text name="Pleaseinsertcolour" value="请输入颜色" />
+    <text name="Confirm" value="确认" />
+    <text name="Close" value="关闭" />
+    <text name="Editspacetype" value="编辑空间分类" />
+    <text name="AddGroup" value="新增组织" />
+    <text name="EditGroup" value="编辑组织" />
+    <text name="Browse" value="浏览文件" />
+    <text name="ComplaintStatus" value="投诉状态" />
+    <text name="ComplaintProcess" value="处理中" />
+
+    <text name="Pages" value="基础页面" />
+    <text name="Asset" value="资产" />
+    <text name="Security" value="安全" />
+    <text name="Energy" value="能源" />
+    <text name="SystemConfig" value="系统管理" />
+    <text name="Operation1" value="运维" />
+    <text name="RefreshButton" value="刷新" />
+
+    <text name="Hotline" value="热线电话" />
+    <text name="Directly" value="直接处理" />
+    <text name="Pleaseenterthenameoftheowner" value="请输入业主姓名" />
+    <text name="Pleaseenteraddress" value="请输入地址" />
+    <text name="Pleasedescribethespecificproblem" value="请描述具体问题" />
+    
+
+    <text name="CCTVConfig" value="CCTV设置" />
+    <text name="DoorAccessConfig" value="门禁设置" />
+    <text name="PowerMgrConfig" value="电柜设置" />
+
+    <text name="Totalnumberofpeople" value="该楼层人数" />
+    <text name="Numberofstaff" value="工作人员数量" />
+    <text name="Numberoftempstaff" value="临时人员数量" />
+    <text name="IndoorTemperature" value="室内温度指标" />
+    <text name="IndoorPressure" value="室内压力指标" />
+    <text name="Activate" value="启动应急预案" />
+    <text name="Record" value="录制" />
+    <text name="Recording" value="录制中" />
+    <text name="Duration" value="Duration" />
+    <text name="Stop" value="Stop" />
+    <text name="CancelEm" value="取消应急预案" />
+    <text name="RecList" value="列表" />
+    <text name="FireEquipment" value="消防设备" />
+    <text name="FireCamera" value="摄像头" />
+
+    <text name="RelDocuments" value="相关文档" />
+    <text name="ClientIpAddress" value="客户端IP" />
+    <text name="ClientName" value="客户端名称" />
+    <text name="BrowserInfo" value="浏览器信息" />
+    <text name="LoginResult" value="登陆结果" />
+    
+    <text name="LoginAudit" value="用户登陆记录" />
+    <text name="UserAudit" value="用户变更记录" />
+    <text name="SpaceBaseInfo" value="基本信息" />
+
+    <text name="Pleaseselectbuilding" value="请选择工单所属的楼宇" />
+    <text name="Pleaseselectthebuildingfirst" value="请先选择楼宇" />
+
+    <text name="Specification" value="规格" />
+    <text name="Levels" value="楼层" />
+    
+    <text name="Water" value="用水量" />
+    <text name="Power" value="用电量" />
+    <text name="m³" value="m³" />
+    <text name="kW·h" value="kW·h" />
+    <text name="Notice" value="公告" />
+    <text name="Work Order List" value="工单列表" />
+    <text name="Add Notice" value="添加公告" />
+    <text name="Pleaseentertitle" value="请输入标题" />
+    <text name="Pleaseentercontent" value="请输入内容" />
+    <text name="Getnoticefail" value="获取公告失败" />
+    <text name="Problem" value="问题描述" />
+    <text name="Reported By" value="投诉人" />
+    <text name="Deletesuccess" value="删除成功" />
+    <text name="Deletefail" value="删除失败" />
+    <text name="Index" value="首页" />
+    
+    <text name="PassRuleMessage" value="密码不符合规定，规定是8位以上且包含数字和英文" />
+
+    <text name="Display Colour" value="显示颜色" />
+    <text name="Contract Number" value="合同编号" />
+    <text name="CCTV Name" value="摄像头名称" />
+    <text name="EQP Code" value="设备编号" />
+    <text name="IP Address" value="IP地址" />
+    <text name="Technical Address" value="技术编号" />
+    <text name="Permissions" value="权限" />
+    <text name="Updates" value="更新内容" />
+    <text name="Date" value="日期" />
+    <text name="Hotline Number" value="热线电话" />
+    <text name="Release Date" value="日期" />
+
+    <text name="Brand" value="品牌" />
+    <text name="Equipment Model" value="型号" />
+    <text name="Engineering Parameters" value="工程参数" />
+    <text name="Factory/Country of Origin" value="生产地" />
+    <text name="Supplier" value="供应商" />
+    <text name="Installation Date" value="安装时间" />
+    <text name="Installer" value="安装厂商" />
+    <text name="Operating and Maintenance Manual" value="维护手册" />
+    <text name="Panel Number" value="面板编号" />
+
+    <text name="NickName" value="昵称" />
+    <text name="Pleaseenterthesamepassword" value="请输入相同的密码" />
+
+    <text name="ContingencyPlanHistory" value="应急历史记录" />
+    <text name="ContingencyPlanResponse" value="应急响应" />
+    <text name="ContiSerialNo" value="编号" />
+    <text name="ContiDescription" value="事件描述" />
+    <text name="ContiStart" value="开始时间" />
+    <text name="ContiEnd" value="结束时间" />
+    <text name="ContiStaff" value="处理人" />
+    <text name="ContiReason" value="事故原因" />
+    <text name="ContiDetail" value="详情" />
+    
+    <text name="ContiAccessCardID" value="门禁卡ID" />
+    <text name="ContiAccessCardHolder" value="持卡人" />
+    <text name="ContiDeviceName" value="刷卡门禁" />
+    <text name="ContiDate" value="刷卡时间" />
+    <text name="ContPersonnelStatus" value="人员状态" />
+    <text name="ContEnvironmentalStatus" value="环境状态" />
+    <text name="ContFaultStatus" value="故障状态" />
+
+    <text name="SpaceStructure" value="空间安排" />
+    <text name="PreMgr" value="前处理" />
+    <text name="BuildingMgr" value="楼栋管理" />
+    <text name="FloorMgr" value="楼层管理" />
+    <text name="SpaceMgr" value="空间管理" />
+    <text name="ComponentMgr" value="构件管理" />
+    <text name="ClassifyMgr" value="分类管理" />
+    <text name="AttributeConfig" value="属性设置" />
+    <text name="EquipmentMapping" value="设备匹配" />
+    <text name="AssetMgr" value="资产管理" />
+    <text name="EquipmentAsset" value="设备资产" />
+    <text name="SpaceAsset" value="空间资产" />
+    <text name="SpecificationLib" value="规格库" />
+    <text name="SpecificationClassify" value="规格分类" />
+    <text name="SpecificationAttribution" value="规格属性" />
+    <text name="OperationMgr" value="运维管理" />
+    <text name="DispatchMgr" value="调度管理" />
+    <text name="ComplaintCenter" value="投诉中心" />
+    <text name="RequestMaintenance" value="应需维护" />
+    <text name="OperationConfig" value="运维配置" />
+    
+    <text name="PropertyMgr" value="资产管理" />
+    <text name="RentMgr" value="租赁管理" />
+    <text name="FinancialStatistics" value="财务统计" />
+    
+    <text name="UserMgr_Query" value="用户查询" />
+    <text name="UserMgr_AddUser" value="添加用户" />
+    <text name="PropertyMgr_Query" value="资产查询" />
+    <text name="PropertyMgr_AddProperty" value="添加资产" />
+    <text name="PropertyMgr_RoomQuery" value="房间查询" />
+    <text name="PropertyMgr_AddRoom" value="添加房间" />
+  
+    <text name="RentMgr_Query" value="租赁查询" />
+    <text name="RentMgr_Add" value="添加合同" />
+    <text name="RentMgr_EarlyWarning" value="提前预警" />
+    <text name="RoleMgr_Query" value="角色查询" />
+    <text name="RoleMgr_AddRole" value="添加角色" />
+  
+    <text name="Window_Warning" value="紧急预警窗口" />
+    <text name="Window_Task" value="任务提示窗口" />
+    <text name="Window_Financial" value="财务信息窗口" />
+    <text name="Window_Property" value="资产信息窗口" />
+    <text name="Window_Rent" value="租赁信息窗口" />
+    <text name="Window_DataCenter" value="数据分析中心" />
+  </texts>
+</localizationDictionary>

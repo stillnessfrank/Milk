@@ -1,0 +1,132 @@
+﻿@using System.Threading
+@using System.Web.Optimization
+@using Abp.Timing
+@using Abp.Web.Mvc.Extensions
+@{
+    SetAntiForgeryCookie();
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="shortcut icon" href="~/favicon.ico">
+
+    <title>@ViewBag.Title</title>
+
+    @Styles.Render("~/Bundles/vendor/css")
+    @Styles.Render("~/Bundles/css")
+
+    <!-- View specific styles -->
+    @RenderSection("styles", required: false)
+
+    <script type="text/javascript">
+        //This is used to get the application's root path from javascript. It's useful if you're running application in a virtual directory under IIS.
+        var abp = abp || {}; abp.appPath = '@ApplicationPath';
+    </script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="@Url.Content("~/Scripts/others/html5shiv.js")"></script>
+        <script src="@Url.Content("~/Scripts/others/respond.min.js")"></script>
+    <![endif]-->
+
+    @Scripts.Render("~/Bundles/vendor/js/top")
+
+</head>
+<body>
+    @Html.Partial("_TopBar")
+    @Html.Action("LeftMenu", "Layout")
+    <section id="main-content">
+        <section class="wrapper">
+            @RenderBody()
+        </section>
+    </section>
+
+    @Scripts.Render("~/Bundles/vendor/js/bottom")
+    @Scripts.Render("~/Bundles/js")
+
+    <script>
+        //Localizing momentjs
+        moment.locale('@Thread.CurrentThread.CurrentUICulture.Name');
+    </script>
+
+    <!-- Dynamic scripts of ABP system (They are created on runtime and can not be bundled) -->
+    <script src="~/api/AbpServiceProxies/GetAll?v=@(Clock.Now.Ticks)"></script>
+    <script src="~/AbpScripts/GetScripts?v=@(Clock.Now.Ticks)" type="text/javascript"></script>
+
+    <!-- SignalR scripts -->
+    <script src="~/signalr/hubs"></script>
+    @Html.IncludeScript("~/Abp/Framework/scripts/libs/abp.signalr.js")
+    @Html.IncludeScript("~/js/jquery.nicescroll.js")
+    @Html.IncludeScript("~/js/common-scripts.js")
+    @if (Thread.CurrentThread.CurrentUICulture.Name == "zh-CN")
+    {
+        @Html.IncludeScript("~/Scripts/messages_zh.min.js")
+    }
+    <!-- View specific scripts -->
+    @RenderSection("scripts", required: false)
+<script type="text/javascript">
+    $(function () {
+        swal.setDefaults({ confirmButtonText: "@L("OK")" });
+
+            
+
+        var proxy = $.connection.emergencyService;
+        var emergencyInterval = null;
+        var emergencySlashTimes = 0;
+        function emergencySlash() {
+            $("#emergencyModal").animate(
+                //使用的animate(方法,选择#sys-alert .lit-slashNum的DOM
+                { opacity: "0.3" },
+                260);
+            //改变不透明度
+            $("#emergencyModal").animate(
+                { opacity: "1" },
+                250);
+        }
+        proxy.client.notify = function (sender, msg) {
+            console.log(sender + ":" + msg);
+            if (sender == "admin" && msg == "start") {
+                //showLightFlash();
+                $("#emergencyModal").modal({ backdrop: 'static', keyboard: false });
+                $("#emergencyModal").modal("show");
+                //$("#btnGotoEmergency").off().on("click",
+                //    function() {
+                //        window.location.href = "../ContingencyPlan/ContingencyResponse";
+                //    });
+
+                //setTimeout(6000,
+                //    function() {
+                //        window.location.href = "../ContingencyPlan/ContingencyResponse";
+                //    });
+                //window.location.href = "../ContingencyPlan/ContingencyResponse";
+
+                emergencyInterval = setInterval(function () {
+                    
+                    emergencySlashTimes++;
+                    if (emergencySlashTimes > 2) {
+                        emergencySlashTimes = 0;
+                        clearInterval(emergencyInterval);
+                        window.location.href = "../ContingencyPlan/ContingencyResponse";
+                    }
+                    emergencySlash();
+                },
+                800);
+            }
+        }
+    });
+</script>
+
+<div id="emergencyModal" class="modal" style="text-align: center; width: 100%;">
+    <div style="text-align: center; padding: 60px 30px; background: #EE2C2C; width: 600px; margin: 0 auto;margin-top: 150px; ">
+        <h1 style="color: #fff;line-height: 50px; font-size: 48px; font-weight: bold; font-family:'微软雅黑'">EMERGENCY!</h1>
+        <h4 style="color: #333; line-height: 50px;">An emergency incident has been activated.</h4>
+    </div>
+</div>
+</body>
+</html>
